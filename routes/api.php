@@ -16,6 +16,8 @@ use App\Http\Controllers\Api\VisitHistoryApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\PatientsApiController;
+use App\Http\Controllers\Api\PatientsBodyPartsController;
+use App\Http\Controllers\Api\ProceduresApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,4 +78,10 @@ Route::group(['middleware' => 'api'],function($router){
 
     Route::get('/getVisitHistories',[VisitHistoryApiController::class,'getVisitHistories']);
     Route::get('/getVisitHistories/{id}',[VisitHistoryApiController::class,'getVisitHistory']);
+
+    Route::get('/getPatientsBodyParts',[PatientsBodyPartsController::class,'getbodyparts']);
+    Route::get('/getPatientsBodyParts/{id}',[PatientsBodyPartsController::class,'getbodypart']);
+
+    Route::get('/getProcedures',[ProceduresApiController::class,'getProcedures']);
+    Route::get('/getProcedures/{id}',[ProceduresApiController::class,'getProcedure']);
 });
