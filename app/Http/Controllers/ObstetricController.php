@@ -42,8 +42,7 @@ class ObstetricController extends Controller
         $obstetric = Obstetric::create([
             'doctor_name' => $request->doctor_name,
             'type' => $request->type,
-            'child_name' => $request->child_name,
-            'child_sex' => $request->child_sex,
+            'childrens' => $request->childrens,
             'number_of_childer' =>$request->number_of_childer,
             'complications' => $request->complications,
             'date' => $request->date,

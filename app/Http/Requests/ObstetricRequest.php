@@ -26,8 +26,7 @@ class ObstetricRequest extends FormRequest
         return [
             'doctor_name' => 'required',
             'type' => 'required',
-            'child_name' => 'required',
-            'child_sex' => 'required',
+            'childrens' => 'required',
             'number_of_childer' => 'required',
             'complications' => 'required',
             'date' => 'required',

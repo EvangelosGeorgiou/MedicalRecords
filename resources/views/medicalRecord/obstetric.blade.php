@@ -57,8 +57,6 @@
                                         <div class="d-flex justify-content-center">
                                             <a href="{{ route('obstetric.show', $obstetric->id) }}"
                                                 class="btn btn-primary btn-sm mr-2">View</a>
-                                            <a href="{{ route('obstetric.edit', $obstetric->id) }}"
-                                                class="btn btn-info btn-sm ml-2 mr-2">Edit</a>
                                             <form action="{{ route('obstetric.destroy', $obstetric->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')

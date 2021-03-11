@@ -29,6 +29,7 @@ class SurgeryRequest extends FormRequest
             'doc_name' => 'required',
             'assistants' => 'required',
             'body_part_id' => 'required',
+            'procedures' => 'required',
             'patient_id' => 'required'
         ];
     }

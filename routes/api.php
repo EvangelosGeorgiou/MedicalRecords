@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\ContactApiController;
 use App\Http\Controllers\Api\AllergiesApiController;
+use App\Http\Controllers\Api\BodyPartsApiController;
 use App\Http\Controllers\Api\DietApiController;
 use App\Http\Controllers\Api\DiseasesApiController;
 use App\Http\Controllers\Api\DisordersApiController;
@@ -84,4 +85,7 @@ Route::group(['middleware' => 'api'],function($router){
 
     Route::get('/getProcedures',[ProceduresApiController::class,'getProcedures']);
     Route::get('/getProcedures/{id}',[ProceduresApiController::class,'getProcedure']);
+
+    Route::get('/getBodyParts',[BodyPartsApiController::class,'getBodyParts']);
+    Route::get('/getBodyParts/{id}',[BodyPartsApiController::class,'getBodyPart']);
 });

@@ -22,10 +22,12 @@
                             <th>{{ $obstetric->type }}</th>
                         </tr>
 
+                        @foreach ($obstetric->childrens as $child)
                         <tr>
-                            <th>Childer/s Name:</th>
-                            <th>{!! $obstetric->child_name !!}</th>
+                            <th>Childer Name:</th>
+                            <th>{{ $child['name'] }}</th>
                         </tr>
+                        @endforeach
 
                         @if($obstetric->complications != '')
                         <tr>
@@ -50,10 +52,12 @@
                             <th>{{ $obstetric->number_of_childer }}</th>
                         </tr>
 
+                        @foreach ($obstetric->childrens as $child)
                         <tr>
-                            <th>Child Sex:</th>
-                            <th>{{ $obstetric->child_sex }}</th>
+                            <th>Childer Sex:</th>
+                            <th>{{ $child['sex'] }}</th>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

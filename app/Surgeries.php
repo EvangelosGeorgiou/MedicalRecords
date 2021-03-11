@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Surgeries extends Model
 {
     protected $fillable = [
-        'name','datetime','doc_name','assistants','body_part_id','complications', 'patient_id'
+        'name','datetime','doc_name','assistants','body_part_id','complications', 'patient_id', 'procedures'
+    ];
+
+    protected $casts = [
+        'procedures'=> 'array'
     ];
 
     public function proceduresInfo(){

@@ -13,16 +13,18 @@ class CreateObstetricsTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('obstetrics', function (Blueprint $table) {
-            $table->id();
+            Schema::dropIfExists('obstetrics');
+            $table->bigIncrements('id');
             $table->string('doctor_name');
             $table->string('type');
-            $table->string('child_name');
-            $table->string('child_sex');
+            $table->json('childrens');
             $table->integer('number_of_childer');
             $table->text('complications');
             $table->date('date');
-            $table->integer('patient_id');
+            $table->bigInteger('patient_id')->unsigned();
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->timestamps();
         });
     }

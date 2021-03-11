@@ -21,6 +21,7 @@ class CreateSurgeriesTable extends Migration
             $table->text('assistants');
             $table->integer('body_part_id');
             $table->text('complications');
+            $table->json('procedures');
             $table->integer('patient_id');
             $table->timestamps();
         });

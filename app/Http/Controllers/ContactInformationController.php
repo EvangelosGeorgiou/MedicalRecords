@@ -47,7 +47,7 @@ class ContactInformationController extends Controller
 
         session()->flash('success',"Contact Information created successfully");
 
-        return redirect(route('patients.show', $request->patient_id));
+        return redirect(route('patient-info.show', $request->patient_id));
     }
 
     /**
@@ -88,7 +88,7 @@ class ContactInformationController extends Controller
 
         session()->flash('success','Contact Information updated successfully');
 
-        return redirect(route('patients.show', $request->patient_id));
+        return redirect(route('patient-info.show', $request->patient_id));
     }
 
     /**

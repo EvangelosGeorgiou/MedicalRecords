@@ -76,27 +76,38 @@
 
                         <input type="hidden" id="patient_id" name="patient_id" value="{{$patients->id}}">
                     </div>
+
+                    <div class="col-md-6">
+
                     @if(isset($surgery))
-                        <div class="col-md-6">
-                            @foreach($surgery->proceduresInfo as $procedure)
+                    <?php $i=0 ?>
+                            @foreach($surgery->procedures as $procedure)
+
                             <div class="form-group">
                                 <label for="procedure_name">Procedure name</label>
-                                <input type="text" class="form-control" name="procedure_name[]" id="procedure_name" value="{{ $procedure->name}}">
+                                <input type="text" class="form-control" name="procedures[{{ $i }}][name]" id="procedure_name" value="{{ $procedure['name']}}">
                             </div>
 
                             <div class="form-group">
                                 <label for="procedure_description">Procedure Description</label>
-                                <textarea cols="5" rows="3" name="procedure_description[]" id="procedure_description" class="form-control">{{ $procedure->description}}</textarea>
+                                <textarea cols="5" rows="3" name="procedures[{{ $i }}][description]" id="procedure_description" class="form-control">{{ $procedure['description']}}</textarea>
                             </div>
                             <hr>
+                            <?php $i++ ?>
                             @endforeach
-                        </div>
+
                     @else
-                    <div class="col-md-6">
-                        <div class="d-flex flex-row-reverse">
-                            <button class="btn btn-info btn-sm add-btn">Add Procedure</button>
-                        </div>
-                        <div class="inputs"></div>
+
+                    <div class="d-flex flex-row-reverse">
+                        <button class="btn btn-info btn-sm add-btn">Add Procedure</button>
+                    </div>
+
+                    <div class="inputs"></div>
+
+                    @endif
+
+
+
                         {{-- <div class="form-group">
                             <label for="procedure_name">Procedure name</label>
                             <input type="text" class="form-control" name="procedure_name" id="procedure_name">
@@ -109,7 +120,6 @@
 
                         </div> --}}
                     </div>
-                    @endif
                 </div>
 
 
@@ -153,12 +163,12 @@
                 <div>
                     <div class="form-group">
                         <label for="procedure_name">Procedure name</label>
-                        <input type="text" class="form-control" name="procedure_name[]" id="procedure_name">
+                        <input type="text" class="form-control" name="procedures[`+(x-2)+`][name]" id="procedure_name">
                     </div>
 
                     <div class="form-group">
                         <label for="procedure_description">Procedure Description</label>
-                        <textarea name="procedure_description[]" id="procedure_description" cols="5" rows="5" class="form-control"></textarea>
+                        <textarea name="procedures[`+(x-2)+`][description]" id="procedure_description" cols="5" rows="5" class="form-control"></textarea>
                     </div>
                 </div>
               `); // add input field

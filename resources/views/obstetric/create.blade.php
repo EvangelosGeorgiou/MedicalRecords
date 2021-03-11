@@ -47,7 +47,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="child_name">Children/s Name</label>
                     <input  type="hidden" name="child_name" id="child_name" value="{{ isset($obstetric) ? $obstetric->child_name : '' }}">
                     <trix-editor input="child_name"></trix-editor>
@@ -60,12 +60,7 @@
                         <option value="M" @if(isset($obstetric) && ($obstetric->child_sex == 'M')) selected @endif>Male</option>
                         <option value="F" @if(isset($obstetric) && ($obstetric->child_sex == 'F')) selected @endif>Female</option>
                     </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="number_of_childer">Number of Children/s</label>
-                    <input type="number" name="number_of_childer" id="number_of_childer" class="form-control" value="{{ isset($obstetric) ? $obstetric->number_of_childer : '' }}">
-                </div>
+                </div> --}}
 
                 <div class="form-group">
                     <label for="complications">Pregnancy Complications</label>
@@ -77,6 +72,13 @@
                     <label for="date">Date</label>
                     <input type="date" name="date" id="date" class="form-control" value="{{ isset($obstetric) ? $obstetric->date : '' }}">
                 </div>
+
+                <div class="form-group">
+                    <label for="number_of_childer">Number of Children/s</label>
+                    <input type="number" name="number_of_childer" id="number_of_childer" class="form-control" value="{{ isset($obstetric) ? $obstetric->number_of_childer : '' }}" onchange="addChildren()">
+                </div>
+
+                <div class="childrens-div"></div>
 
                 <input type="hidden" name="patient_id" name="patient_id" value="{{ $patients->id }}">
 
@@ -90,8 +92,33 @@
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
-          flatpickr('#date'){
-              enableTime: true;
+         // flatpickr('#date');
+
+
+    </script>
+
+    <script>
+        function addChildren(){
+              var number = document.getElementById("number_of_childer").value;
+              $('.childrens-div > div ').html('');
+
+              for(var i=0;i<number;i++){
+                $('.childrens-div').append(`
+                <div class="form-group">
+                    <label for="child_name">Children Name</label>
+                    <input  type="text" class="form-control" name="childrens[`+i+`][name]" id="child_name" value="{{ isset($obstetric) ? $obstetric->child_name : '' }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="child_sex">Child Sex</label>
+                    <select name="childrens[`+i+`][sex]" id="child_sex" class="form-control">
+                        <option value="">Select child sex...</option>
+                        <option value="M" @if(isset($obstetric) && ($obstetric->child_sex == 'M')) selected @endif>Male</option>
+                        <option value="F" @if(isset($obstetric) && ($obstetric->child_sex == 'F')) selected @endif>Female</option>
+                    </select>
+                </div>
+                `)
+              }
           }
     </script>
 @endsection

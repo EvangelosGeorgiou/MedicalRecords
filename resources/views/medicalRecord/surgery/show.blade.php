@@ -52,19 +52,23 @@
 <div class="card container mt-3 mb-3">
     <div class="card-header">Procedures</div>
     <div class="card-body">
-        @foreach($surgery->proceduresInfo as $procedure)
+        <ol>
+        @foreach($surgery->procedures as $procedure)
+        <li>
             <div class="ml-3 procedure">
                 <div>
                     <label>Procedure name:</label>
-                    <p>{!! $procedure->name !!}</p>
+                    <p>{!! $procedure['name'] !!}</p>
                 </div>
 
                 <div>
                     <label>Procedure description</label>
-                    <p>{!! $procedure->description !!}</p>
+                    <p>{!! $procedure['description'] !!}</p>
                 </div>
             </div>
+        </li>
             @endforeach
+        </ol>
     </div>
 </div>
 
