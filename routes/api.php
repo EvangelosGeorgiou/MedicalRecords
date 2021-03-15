@@ -51,7 +51,7 @@ Route::group(['middleware' => 'api'],function($router){
     Route::get('/getDiet/{id}',[DietApiController::class,'getDiet']);
 
     Route::get('/getDiseases',[DiseasesApiController::class,'getDieseases']);
-    Route::get('/getDiseases/{id}',[DiseasesApiController::class,'getDiesease']);
+    Route::get('/getDiseases/{id}',[DiseasesApiController::class,'getDisease']);
 
     Route::get('/getDisorders',[DisordersApiController::class,'getDisorders']);
     Route::get('/getDisorders/{id}',[DisordersApiController::class,'getDisorder']);
