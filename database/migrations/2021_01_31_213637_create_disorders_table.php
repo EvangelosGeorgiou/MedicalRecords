@@ -18,7 +18,7 @@ class CreateDisordersTable extends Migration
             $table->integer('icd_code_id');
             $table->text('description');
             $table->date('date');
-            $table->integer('body_part_id');
+            $table->string('body_part');
             $table->integer('patient_id');
             $table->timestamps();
         });

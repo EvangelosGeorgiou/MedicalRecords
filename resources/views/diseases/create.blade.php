@@ -59,10 +59,10 @@
 
                 <div class="form-group">
                     <label for="body_part">Body Part</label>
-                    <select name="body_part_id" id="body_part_id" class="form-control">
+                    <select name="body_part" id="body_part" class="form-control">
                         <option value="">Select a body part...</option>
                         @foreach($body_parts as $part)
-                            <option value="{{ $part->id }}" @if(isset($disease) && $disease->body_part_id==$part->id) selected @endif>{{ $part->name }} </option>
+                            <option value="{{ $part->name }}" @if(isset($disease) && $disease->body_part==$part->name) selected @endif>{{ $part->name }} </option>
                         @endforeach
                     </select>
                 </div>

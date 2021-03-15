@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\DiseasesApiController;
 use App\Http\Controllers\Api\DisordersApiController;
 use App\Http\Controllers\Api\FamilyHistoryApiController;
 use App\Http\Controllers\Api\HabitsApiController;
+use App\Http\Controllers\Api\IcdApiController;
 use App\Http\Controllers\Api\ImmunizationApiController;
 use App\Http\Controllers\Api\MedicationsApiController;
 use App\Http\Controllers\Api\ObstetricApiController;
@@ -88,4 +89,7 @@ Route::group(['middleware' => 'api'],function($router){
 
     Route::get('/getBodyParts',[BodyPartsApiController::class,'getBodyParts']);
     Route::get('/getBodyParts/{id}',[BodyPartsApiController::class,'getBodyPart']);
+
+    Route::get('/getIcdCode',[IcdApiController::class,'getICDs']);
+    Route::get('/getIcdCode/{id}',[IcdApiController::class,'getICD']);
 });

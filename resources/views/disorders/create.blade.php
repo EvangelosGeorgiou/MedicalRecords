@@ -32,7 +32,7 @@
 
                     <div class="form-group">
 
-                        <label for="icd_code_id">Select the Disease</label>
+                        <label for="icd_code_id">Select the Disorder</label>
                         {{-- <input type="text" name="icd_code_id" id="icd_code_id" class="form-control icd_code_id" autocomplete="off" value="{{ isset($disease) ? $disease->icdCodeInfo['icd_code'].'/ ' .$disease->icdCodeInfo['name'] : '' }}">
                         <div id="icd_codes"></div> --}}
                         <select name="icd_code_id" id="icd_code" class="form-control">
@@ -53,10 +53,10 @@
 
                     <div class="form-group">
                         <label for="body_part">Body Part</label>
-                        <select name="body_part_id" id="body_part_id" class="form-control">
+                        <select name="body_part" id="body_part" class="form-control">
                             <option value="">Select a body part...</option>
                             @foreach($body_parts as $part)
-                                <option value="{{ $part->id }}" @if(isset($disorder) && $disorder->body_part_id==$part->id) selected @endif>{{ $part->name }} </option>
+                                <option value="{{ $part->name }}" @if(isset($disorder) && $disorder->body_part==$part->name) selected @endif>{{ $part->name }} </option>
                             @endforeach
                         </select>
                     </div>

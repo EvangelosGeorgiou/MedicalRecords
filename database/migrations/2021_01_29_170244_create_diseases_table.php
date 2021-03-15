@@ -21,7 +21,7 @@ class CreateDiseasesTable extends Migration
             $table->text('symptoms');
             $table->string('doc_name');
             $table->date('date');
-            $table->integer('body_part_id');
+            $table->string('body_part');
             $table->integer('patient_id');
             $table->timestamps();
         });

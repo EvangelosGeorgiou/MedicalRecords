@@ -30,7 +30,7 @@ class CreateDiseasesRequest extends FormRequest
             'symptoms' => 'required',
             'doc_name' => 'required',
             'date' => 'required',
-            'body_part_id' => 'required',
+            'body_part' => 'required',
             'patient_id' => 'required'
         ];
     }

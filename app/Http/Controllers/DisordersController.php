@@ -43,15 +43,15 @@ class DisordersController extends Controller {
             'icd_code_id' => $request -> icd_code_id,
             'date' => $request -> date,
             'description' => $request -> description,
-            'body_part_id' => $request->body_part_id,
+            'body_part' => $request->body_part,
             'patient_id' => $request -> patient_id
         ]);
 
-        PatientBodyParts::create([
-            'bodyPartID' => $request->body_part_id,
-            'patient_id' => $request->patient_id,
-            'flag' => '1'
-        ]);
+        // PatientBodyParts::create([
+        //     'bodyPartID' => $request->body_part_id,
+        //     'patient_id' => $request->patient_id,
+        //     'flag' => '1'
+        // ]);
 
         session() -> flash('success', "Disorder added successfully");
 
@@ -95,13 +95,13 @@ class DisordersController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(CreateDisordersRequest $request, Disorders $disorder) {
-        $data = $request->only([ 'icd_code_id','description','date','patient_id', 'body_part_id' ]);
+        $data = $request->only([ 'icd_code_id','description','date','patient_id', 'body_part' ]);
 
-        PatientBodyParts::where('patient_id',$request->patient_id)
-                        ->where('bodyPartID', $disorder->body_part_id )
-                        ->update(['bodyPartID'=>$request->body_part_id,
-                                'flag'=> 1,
-                                'patient_id' => $request->patient_id]);
+        // PatientBodyParts::where('patient_id',$request->patient_id)
+        //                 ->where('bodyPartID', $disorder->body_part_id )
+        //                 ->update(['bodyPartID'=>$request->body_part_id,
+        //                         'flag'=> 1,
+        //                         'patient_id' => $request->patient_id]);
 
         $disorder->update($data);
 
@@ -121,8 +121,8 @@ class DisordersController extends Controller {
 
         $body_part_id = $disorder->body_part_id;
 
-        PatientBodyParts::where('bodyPartID','=',$body_part_id)->where('patient_id','=',$disorder->patient_id)->delete();
-        $disorder -> delete();
+        // PatientBodyParts::where('bodyPartID','=',$body_part_id)->where('patient_id','=',$disorder->patient_id)->delete();
+        // $disorder -> delete();
 
         session() -> flash('success', 'Disorder deleted successfuly');
 

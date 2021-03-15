@@ -48,7 +48,7 @@ class SurgeriesController extends Controller
             'doc_name'  => $request->doc_name,
             'assistants'  => $request->assistants,
             'procedures'  => $request->procedures,
-            'body_part_id'  => $request->body_part_id,
+            'body_part'  => $request->body_part,
             'complications'  => $request->complications,
             'patient_id' => $request->patient_id,
         ]);
@@ -64,11 +64,11 @@ class SurgeriesController extends Controller
         //     }
         // }
 
-        PatientBodyParts::create([
-            'bodyPartID' => $request->body_part_id,
-            'patient_id' => $request->patient_id,
-            'flag' => '1'
-        ]);
+        // PatientBodyParts::create([
+        //     'bodyPartID' => $request->body_part_id,
+        //     'patient_id' => $request->patient_id,
+        //     'flag' => '1'
+        // ]);
 
         session()->flash('success','Surgery Information added successfully');
         return redirect(route('patient-surgery.show', $request->patient_id));
@@ -110,13 +110,13 @@ class SurgeriesController extends Controller
      */
     public function update(SurgeryRequest $request, Surgeries $surgery)
     {
-        $data = $request->only([ 'name','datetime','doc_name','assistants','body_part_id','complications', 'patient_id' ,'procedures']);
+        $data = $request->only([ 'name','datetime','doc_name','assistants','body_part','complications', 'patient_id' ,'procedures']);
 
-        PatientBodyParts::where('patient_id',$request->patient_id)
-                        ->where('bodyPartID', $surgery->body_part_id )
-                        ->update(['bodyPartID'=>$request->body_part_id,
-                                'flag'=> 1,
-                                'patient_id' => $request->patient_id]);
+        // PatientBodyParts::where('patient_id',$request->patient_id)
+        //                 ->where('bodyPartID', $surgery->body_part_id )
+        //                 ->update(['bodyPartID'=>$request->body_part_id,
+        //                         'flag'=> 1,
+        //                         'patient_id' => $request->patient_id]);
 
         // if($request->procedure_name != null){
         //     for($i=0; $i < count($request->procedure_name) ; $i++){
