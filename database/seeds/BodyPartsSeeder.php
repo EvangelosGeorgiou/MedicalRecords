@@ -21,8 +21,8 @@ class BodyPartsSeeder extends Seeder
 
             'Brain','Eye Left','Eye Right','Lungs','Heart','Stomach','Liver','Pancreas','Kidney' ,'Large Intestine' ,'Small Instestine' ,'Urinary' ,'Pelvic' ,
 
-            'Head', 'Neck', 'Traps', 'Lats', 'Rhomboid', 'Left Shoulder', 'Right Shoulder', 'Left Tricep', 'Right Tricep', 'Left Bicep', 'Right Bicep', 'Left Forearm', 'Right Foream', 'Chest',
-            'Abs', 'Glutens', 'Abductors', 'Left Hamstring', 'Right Hamstring', 'Left Quad', 'Right Quad', 'Left Calves', 'Right Calves', '', '', '', '',
+            'Head', 'Neck', 'Traps', 'Latissimus Dorsi', 'Rhomboid', 'Left Shoulder', 'Right Shoulder', 'Left Tricep', 'Right Tricep', 'Left Bicep', 'Right Bicep', 'Left Forearm', 'Right Foream', 'Chest',
+            'Abs', 'Glutes', 'Left Abductors','Right Abductors', 'Left Hamstring', 'Right Hamstring', 'Left Quadriceps', 'Right Quadriceps', 'Left Calves', 'Right Calves', '', '', '', '',
         ];
 
         foreach($bodyParts as $part){

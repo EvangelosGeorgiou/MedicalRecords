@@ -15,7 +15,7 @@ class PatientsApiController extends Controller
 
     public function show($id)
     {
-        return Patients::find($id);
+        return Patients::where('id','=',$id)->get();
     }
 
 }
