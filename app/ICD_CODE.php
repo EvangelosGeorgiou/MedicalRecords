@@ -10,4 +10,8 @@ class ICD_CODE extends Model
         'icd_code', 'name'
     ];
 
+    public function diseaseInfo(){
+        return $this->hasMany(Diseases::class, 'icd_code_id','id');
+    }
+
 }

@@ -13,9 +13,12 @@ class CreateDiseasesTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::create('diseases', function (Blueprint $table) {
-            $table->id();
-            $table->integer('icd_code_id');
+            Schema::dropIfExists('diseases');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('icd_code_id');
+            $table->foreign('icd_code_id')->references('id')->on('i_c_d__c_o_d_e_s')->onDelete('cascade');
             $table->text('description');
             $table->text('diagnosis');
             $table->text('symptoms');

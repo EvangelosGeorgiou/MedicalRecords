@@ -2,11 +2,9 @@
 
 namespace App\Http\Resources;
 
-use App\Diseases;
-use App\ICD_CODE;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class IcdCodeResource extends JsonResource
+class DisorderResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,8 +16,11 @@ class IcdCodeResource extends JsonResource
     {
         return [
             [
-                'icd_code' =>$this->icd_code,
-                'name' => $this->name,
+                'icdCode' =>new IcdCodeResource($this->icdCodeInfo),
+                'description' => $this->description,
+                'date' => $this->date,
+                'body_part' => $this->body_part,
+                'patient_id' => $this->patient_id
             ]
         ];
     }

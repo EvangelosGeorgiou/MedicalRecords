@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Diseases::class, function (Faker $faker) {
     return [
-        'icd_code_id' => $faker->numberBetween(1,79560),
+        'icd_code_id' => $faker->numberBetween(1,70000),
         'description' => $faker->sentence(4),
         'diagnosis' => $faker->sentence(1),
         'symptoms'=> $faker->sentence(8),

@@ -14,7 +14,8 @@ class CreateICDCODESTable extends Migration
     public function up()
     {
         Schema::create('i_c_d__c_o_d_e_s', function (Blueprint $table) {
-            $table->id();
+            Schema::dropIfExists('i_c_d__c_o_d_e_s');
+            $table->bigIncrements('id');
             $table->string('icd_code');
             $table->string('name');
             $table->timestamps();
