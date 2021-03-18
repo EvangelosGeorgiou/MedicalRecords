@@ -52,9 +52,11 @@ Route::group(['middleware' => 'api'],function($router){
     Route::get('/getDiet/{id}',[DietApiController::class,'getDiet']);
 
     Route::get('/getDiseases',[DiseasesApiController::class,'getDieseases']);
-    Route::get('/getDiseases/{id}',[DiseasesApiController::class,'getDisease']);
+    Route::get('/getDiseases/patient={id}',[DiseasesApiController::class,'getPatientDisease']);
+    Route::get('/getDiseases/{id}',[DiseasesApiController::class,'getDiesease']);
 
     Route::get('/getDisorders',[DisordersApiController::class,'getDisorders']);
+    Route::get('/getDisorders/patient={id}',[DisordersApiController::class,'getPatientDisorder']);
     Route::get('/getDisorders/{id}',[DisordersApiController::class,'getDisorder']);
 
     Route::get('/getFamilyHistory',[FamilyHistoryApiController::class,'getFamilyHistories']);
@@ -73,6 +75,7 @@ Route::group(['middleware' => 'api'],function($router){
     Route::get('/getObstetrics/{id}',[ObstetricApiController::class,'getObstetric']);
 
     Route::get('/getSurgeries',[SurgeriesApiController::class,'getSurgeries']);
+    Route::get('/getSurgeries/patient={id}',[SurgeriesApiController::class,'getPatientSurgery']);
     Route::get('/getSurgeries/{id}',[SurgeriesApiController::class,'getSurgery']);
 
     Route::get('/getTests',[TestsApiController::class,'getTests']);

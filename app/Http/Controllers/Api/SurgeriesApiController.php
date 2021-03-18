@@ -13,6 +13,10 @@ class SurgeriesApiController extends Controller
     }
 
     public function getSurgery($id){
+        return Surgeries::where('id','=',$id)->get();
+    }
+
+    public function getPatientSurgery($id){
         return Surgeries::where('patient_id','=',$id)->get();
     }
 }

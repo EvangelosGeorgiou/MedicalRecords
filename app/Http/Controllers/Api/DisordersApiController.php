@@ -16,6 +16,11 @@ class DisordersApiController extends Controller
 
     public function getDisorder($id){
         $disorder = Disorders::with(['icdCodeInfo']);
+        return DisorderResource::collection($disorder->where('id','=',$id)->paginate(50))->response();
+    }
+
+    public function getPatientDisorder($id){
+        $disorder = Disorders::with(['icdCodeInfo']);
         return DisorderResource::collection($disorder->where('patient_id','=',$id)->paginate(50))->response();
     }
 }

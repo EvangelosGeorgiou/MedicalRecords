@@ -16,7 +16,13 @@ class DiseasesApiController extends Controller
         return DiseasesResource::collection($diseases->paginate(50))->response();
     }
 
-    public function getDisease($id){
+    public function getDiesease($id){
+        //return Diseases::all();
+        $diseases = Diseases::with(['icdCodeInfo']);
+        return DiseasesResource::collection($diseases->where('id','=',$id)->paginate(50))->response();
+    }
+
+    public function getPatientDisease($id){
         $diseases = Diseases::with(['icdCodeInfo']);
         return DiseasesResource::collection($diseases->where('patient_id','=',$id)->paginate(50))->response();
         //return Diseases::where('patient_id','=',$id)->get();

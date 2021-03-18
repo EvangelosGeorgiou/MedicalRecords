@@ -16,6 +16,7 @@ class DisorderResource extends JsonResource
     {
         return [
             [
+                'id' => $this->id,
                 'icdCode' =>new IcdCodeResource($this->icdCodeInfo),
                 'description' => $this->description,
                 'date' => $this->date,
