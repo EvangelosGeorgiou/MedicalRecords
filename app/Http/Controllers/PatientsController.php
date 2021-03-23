@@ -108,7 +108,7 @@ class PatientsController extends Controller
         $patients->update($data);
         session()->flash('success','Patient Information updated successfuly');
 
-        return redirect(route('patients.show', $request->patient_id));
+        return redirect(route('patient-info.show', $request->patient_id));
     }
 
     /**

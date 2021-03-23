@@ -49,7 +49,7 @@
                         </tr>
 
                         <tr>
-                            <th>Start Date:</th>
+                            <th>Finish Date:</th>
                             <th>{{ $medication->finish_date }}</th>
                         </tr>
 
