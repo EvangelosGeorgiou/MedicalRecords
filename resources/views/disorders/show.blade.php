@@ -9,7 +9,7 @@
 
     <div class="card-body">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-6">
                 <div>
                     <label>Disease Name</label>
                     <p>{{ $disorder->icdCodeInfo['name'] }}</p>
@@ -20,7 +20,7 @@
                     <p>{{ $disorder->description }}</p>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <div>
                     <label>ICD Code</label>
                     <p>{{ $disorder->icdCodeInfo['icd_code'] }}</p>
@@ -41,11 +41,13 @@
 @section('css')
 <style>
     label {
-        color: blue
+        color: blue;
+        font-weight: bold;
     }
 
     p {
-        color: black
+        color: black;
+        font-weight: bold;
     }
 
 </style>

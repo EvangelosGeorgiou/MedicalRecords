@@ -83,7 +83,7 @@ class SurgeriesController extends Controller
     public function show($id)
     {
         $surgery = Surgeries::find($id);
-        $patients = Patients::find($surgery->id);
+        $patients = Patients::find($surgery->patient_id);
 
         return view('medicalRecord.surgery.show')->with('surgery',$surgery)->with('patients', $patients);
     }

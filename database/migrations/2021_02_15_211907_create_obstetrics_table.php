@@ -21,7 +21,7 @@ class CreateObstetricsTable extends Migration
             $table->string('type');
             $table->json('childrens');
             $table->integer('number_of_childer');
-            $table->text('complications');
+            $table->text('complications')->nullable();
             $table->date('date');
             $table->bigInteger('patient_id')->unsigned();
             $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');

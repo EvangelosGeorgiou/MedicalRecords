@@ -20,7 +20,7 @@ class CreateDisordersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('icd_code_id');
             $table->foreign('icd_code_id')->references('id')->on('i_c_d__c_o_d_e_s')->onDelete('cascade');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->date('date');
             $table->string('body_part');
             $table->integer('patient_id');

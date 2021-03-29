@@ -25,7 +25,6 @@ class CreateDiseasesRequest extends FormRequest
     {
         return [
             'icd_code_id' => 'required',
-            'description' => 'required',
             'diagnosis' => 'required',
             'symptoms' => 'required',
             'doc_name' => 'required',

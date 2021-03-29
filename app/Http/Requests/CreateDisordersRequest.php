@@ -25,7 +25,6 @@ class CreateDisordersRequest extends FormRequest
     {
         return [
             'icd_code_id'  => 'required' ,
-            'description'  => 'required' ,
             'date'  => 'required' ,
             'body_part' => 'required',
             'patient_id'  => 'required'

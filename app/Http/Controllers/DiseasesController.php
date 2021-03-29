@@ -9,6 +9,7 @@ use App\Http\Requests\CreateDiseasesRequest;
 use App\ICD_CODE;
 use App\BodyParts;
 use App\PatientBodyParts;
+use Illuminate\Support\Facades\Http;
 
 class DiseasesController extends Controller
 {
@@ -29,6 +30,8 @@ class DiseasesController extends Controller
      */
     public function create($patients_id)
     {
+        //$icd_json = Http::get('http://127.0.0.1:8000/api/getIcdCode');
+        //dd($icd_json);
         $patients = Patients::find($patients_id);
         return view('diseases.create')->with('patients',$patients)->with('icdCode', ICD_CODE::all())->with('body_parts',BodyParts::all()->sortBy('name'));
     }

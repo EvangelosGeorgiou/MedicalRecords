@@ -28,7 +28,6 @@ class ObstetricRequest extends FormRequest
             'type' => 'required',
             'childrens' => 'required',
             'number_of_childer' => 'required',
-            'complications' => 'required',
             'date' => 'required',
             'patient_id' => 'required'
         ];

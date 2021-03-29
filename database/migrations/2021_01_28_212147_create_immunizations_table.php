@@ -17,7 +17,7 @@ class CreateImmunizationsTable extends Migration
             $table->id();
             $table->string('vaccine_name');
             $table->date('date');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->integer('patient_id');
             $table->timestamps();
         });

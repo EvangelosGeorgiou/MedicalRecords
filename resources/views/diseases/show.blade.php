@@ -9,42 +9,51 @@
 
     <div class="card-body">
         <div class="row">
-            <div class="col-md-7">
-                <div>
-                    <label>Disease Name</label>
-                    <p>{{ $disease->icdCodeInfo['name'] }}</p>
-                </div>
+            <div class="col-md-6">
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <th style="width: 35%">Disease Name: </th>
+                            <th>{{ $disease->icdCodeInfo['name'] }}</th>
+                        </tr>
 
-                <div>
-                    <label>Doctor Name</label>
-                    <p>{{ $disease->doc_name }}</p>
-                </div>
+                        <tr>
+                            <th>ICD Code: </th>
+                            <th>{{ $disease->icdCodeInfo['icd_code'] }}</th>
 
-                <div>
-                    <label>Symptoms</label>
-                    <p>{!! $disease->symptoms !!}</p>
-                </div>
+                        </tr>
 
-                <div>
-                    <label>Description</label>
-                    <p>{!! $disease->description !!}</p>
-                </div>
+                        <tr>
+                            <th>Symptoms: </th>
+                            <th>{!! $disease->symptoms !!}</th>
+                        </tr>
+
+                        <tr>
+                            <th>Description: </th>
+                            <th>{!! $disease->description !!}</th>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="col-md-5">
-                <div>
-                    <label>ICD Code</label>
-                    <p>{{ $disease->icdCodeInfo['icd_code'] }}</p>
-                </div>
+            <div class="col-md-6">
+                <table class="table table-borderless">
+                    <tbody>
+                        <tr>
+                            <th style="width: 35%">Doctor Name: </th>
+                            <th>{{ $disease->doc_name }}</th>
+                        </tr>
 
-                <div>
-                    <label>Date</label>
-                    <p>{{ $disease->date }}</p>
-                </div>
+                        <tr>
+                            <th>Date: </th>
+                            <th>{{ $disease->date }}</th>
+                        </tr>
 
-                <div>
-                    <label>Diagnosis</label>
-                    <p>{!! $disease->diagnosis !!}</p>
-                </div>
+                        <tr>
+                            <th>Diagnosis: </th>
+                            <th>{!! $disease->diagnosis !!}</th>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -55,12 +64,15 @@
 
 @section('css')
 <style>
-    label {
-        color: blue
+tbody tr th:first-child
+     {
+        color: blue;
+        font-weight: bold;
     }
 
-    p {
-        color: black
+    tbody tr th:last-child {
+        color: black;
+        font-weight: bold;
     }
 
 </style>

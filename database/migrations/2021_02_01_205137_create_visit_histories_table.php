@@ -18,7 +18,7 @@ class CreateVisitHistoriesTable extends Migration
             $table->string('doc_name');
             $table->integer('doc_speciality_id');
             $table->text('reason_of_visit');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->date('date');
             $table->integer('patient_id');
             $table->timestamps();

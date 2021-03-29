@@ -27,7 +27,6 @@ class VisitHistoryRequest extends FormRequest
             'doc_name' => 'required',
             'doc_speciality_id' => 'required',
             'reason_of_visit' => 'required',
-            'description' => 'required',
             'date' => 'required',
             'patient_id' => 'required'
         ];

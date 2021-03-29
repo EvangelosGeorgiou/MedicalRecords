@@ -5,16 +5,7 @@
 <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
-<style>
-    tbody tr th:first-child {
-        color: blue
-    }
 
-    tbody tr th:last-child {
-        color: black
-    }
-
-</style>
 @endsection
 
 @section('content')
@@ -92,8 +83,8 @@
     </a>
     <!-- habits table -->
     <div class="collapse show f" id="collapseCardExample2">
-        <div class="card-body">
-            <div class="card shadow mb-4 mt-3">
+        <div class="card mt-3">
+            <div class="card shadow ">
                 <div class="d-flex flex-row-reverse pr-4 pt-2">
                     <a href="{{ route('habits.create', $patients->id) }}" class="btn btn-primary btn-sm">Add Habits</a>
                 </div>
@@ -116,8 +107,8 @@
                                 @foreach($patients->habitsInfo as $habitsInfo)
                                 <tr>
                                     <th>{!! $habitsInfo->name !!}</th>
-                                    <th style="width: 10%">
-                                        <div class="text-center">
+                                    <th >
+                                        <div class="d-flex justify-content-center">
                                             <form action="{{ route('habits.destroy', $habitsInfo->id) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')

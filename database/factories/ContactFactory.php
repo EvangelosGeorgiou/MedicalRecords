@@ -8,9 +8,9 @@ use App\ContactInformation;
 
 $factory->define(ContactInformation::class, function (Faker $faker) {
     return [
-        'country' => 'Cyprus',
-        'city' => 'Limassol',
-        'postal_code' => '1234',
+        'country' => $faker->country,
+        'city' => $faker->city,
+        'postal_code' => $faker->postcode,
         'address' => $faker->address,
         'patient_id' => $faker->unique()->numberBetween(1,20)
     ];

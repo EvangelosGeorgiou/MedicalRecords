@@ -20,8 +20,8 @@ class CreateSurgeriesTable extends Migration
             $table->string('doc_name');
             $table->text('assistants');
             $table->string('body_part');
-            $table->text('complications');
-            $table->json('procedures');
+            $table->text('complications')->nullable();
+            $table->json('procedures')->nullable();
             $table->integer('patient_id');
             $table->timestamps();
         });

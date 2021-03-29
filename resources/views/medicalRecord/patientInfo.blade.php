@@ -99,11 +99,13 @@
     <!-- Card Content - Collapse -->
     <div class="collapse show f" id="collapseCardExample2">
         <div class="card-body">
+            @if($patients->contactInfo == null)
+                <div class="d-flex justify-content-center">
+                    <a href="{{ route('contacts.create',$patients->id) }}" class="btn btn-primary btn-sm">Add Contact
+                        Information</a>
+                </div>
+            @else
             <div class="row">
-                @if($patients->contactInfo == null)
-                <a href="{{ route('contacts.create',$patients->id) }}" class="btn btn-primary btn-sm">Add Contact
-                    Information</a>
-                @else
                 <div class="col-md-6">
                     <table class="table table-borderless">
                         <tbody>
@@ -137,9 +139,10 @@
                 </div>
             </div>
             <div class="d-flex flex-row-reverse pr-4 pt-2">
-                <a href="{{ route('contacts.edit',$patients->contactInfo->id) }}" class="btn btn-info btn-sm">Edit Information</a>
+                <a href="{{ route('contacts.edit',$patients->contactInfo->id) }}" class="btn btn-info btn-sm">Edit
+                    Information</a>
             </div>
-                @endif
+            @endif
         </div>
     </div>
 </div>
@@ -156,7 +159,8 @@
 
         <div class="card shadow mb-4 mt-3">
             <div class="d-flex flex-row-reverse pr-4 pt-2">
-                <div class="p-2 bd-highlight"><a href="{{ route('familyHistory.create', $patients->id) }}" class="btn btn-primary btn-sm">Add Information</a></div>
+                <div class="p-2 bd-highlight"><a href="{{ route('familyHistory.create', $patients->id) }}"
+                        class="btn btn-primary btn-sm">Add Information</a></div>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

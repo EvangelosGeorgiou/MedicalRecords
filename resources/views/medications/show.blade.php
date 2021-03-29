@@ -23,7 +23,7 @@
                         </tr>
 
                         <tr>
-                            <th>Purpose of the medication:</th>
+                            <th>Purpose:</th>
                             <th>{{ $medication->purpose }}</th>
                         </tr>
 
