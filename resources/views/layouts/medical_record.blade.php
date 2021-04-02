@@ -34,7 +34,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" >
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
@@ -123,6 +123,11 @@
               <a class="nav-link" href="{{ route('home') }}">
                 <span>Home</span></a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('unity.index',$patients->id) }}" target="_blank">
+                  <span>Go to App</span></a>
+              </li>
 
             <div class="topbar-divider d-none d-sm-block"></div>
 

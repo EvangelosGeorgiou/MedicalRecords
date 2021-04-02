@@ -9,6 +9,7 @@ use App\Http\Controllers\MedicalRecord\DHIController;
 use App\Http\Controllers\MedicalRecord\IllnessController;
 use App\Http\Controllers\MedicalRecord\AppointmentsTestsController;
 use App\Http\Controllers\MedicalRecord\SurgeryController;
+use App\Http\Controllers\UnityController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,6 +74,8 @@ Route::middleware(['auth'])->group(function(){
 
     Route::resource('obstetric','ObstetricController')->except(['create','index']);
     Route::get('obstetric/create/{patient_id}','ObstetricController@create')->name('obstetric.create');
+
+    Route::get('medicalRecord/UnityWebGL/{patient}', [UnityController::class,'index'])->name('unity.index');
 
     //Medical Record Page
     Route::get('medicalRecord/patient-info/{patient}',[PatientInfoController::class,'show'])->name('patient-info.show');
