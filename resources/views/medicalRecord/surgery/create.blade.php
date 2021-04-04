@@ -79,7 +79,7 @@
 
                     <div class="col-md-6">
 
-                    @if(isset($surgery))
+                    @if(isset($surgery) && $surgery->procedures != null)
                     <?php $i=0 ?>
                             @foreach($surgery->procedures as $procedure)
 
