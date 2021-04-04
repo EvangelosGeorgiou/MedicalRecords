@@ -48,7 +48,7 @@
         </div>
     </div>
 </div>
-
+@if($surgery->procedures != null)
 <div class="card container mt-3 mb-3">
     <div class="card-header">Procedures</div>
     <div class="card-body">
@@ -71,7 +71,7 @@
         </ol>
     </div>
 </div>
-
+@endif
 @endsection
 
 @section('css')
