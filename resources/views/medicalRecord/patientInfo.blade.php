@@ -36,7 +36,7 @@
                                 <th>{{ $patients->surname }}</th>
                             </tr>
                             <tr>
-                                <th>Identity Cart</th>
+                                <th>ID</th>
                                 <th>{{ $patients->identity_number}}</th>
                             </tr>
                             <tr>

@@ -73,7 +73,7 @@
       <li class="nav-item">
         <a class="nav-link" href="{{ route('appointments-tests.show', $patients->id )}}">
             <i class="fas fa-calendar-check"></i>
-          <span>Doctor Appointment & Tests</span></a>
+          <span>Doctor Appointment / Tests/ Medications</span></a>
       </li>
 
       <li class="nav-item">

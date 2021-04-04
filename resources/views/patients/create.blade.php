@@ -78,7 +78,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="identity_number">Identity Cart</label>
+                        <label for="identity_number">ID </label>
                         <input type="number" class="form-control" name="identity_number" id="identity_number"
                             placeholder="Enter patient id" value="{{ isset($patients) ? $patients->identity_number : '' }}" @if(isset($patients))  @endif>
                     </div>
