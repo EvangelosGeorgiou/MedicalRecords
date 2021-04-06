@@ -24,10 +24,11 @@ class DietRequest extends FormRequest
     public function rules()
     {
         return [
-            'description' => 'required', 
-            'start_date' => 'required', 
+            'description' => 'required',
+            'start_date' => 'required',
+            'finish_date' => 'required',
             'patient_id' => 'required',
-            
+
         ];
     }
 }

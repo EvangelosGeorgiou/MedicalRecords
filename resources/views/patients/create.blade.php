@@ -33,28 +33,28 @@
 
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter patient name" value="{{ isset($patients) ? $patients->name : '' }}">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter patient name" value="{{ isset($patients) ? $patients->name : old('name') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" name="email" id="email"
-                            placeholder="patient@email.com" value="{{ isset($patients) ? $patients->email : '' }}">
+                            placeholder="patient@email.com" value="{{ isset($patients) ? $patients->email : old('email') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="telephone">Telephone</label>
-                        <input type="number" class="form-control" name="telephone" id="telephone" placeholder="Enter phone number" value="{{ isset($patients) ? $patients->telephone : '' }}">
+                        <input type="number" class="form-control" name="telephone" id="telephone" placeholder="Enter phone number" value="{{ isset($patients) ? $patients->telephone : old('telephone') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="dbo">Date of Birth</label>
-                        <input type="date" class="form-control" name="dbo" id="dbo" value="{{ isset($patients) ? $patients->dbo : '' }}">
+                        <input type="date" class="form-control" name="dbo" id="dbo" value="{{ isset($patients) ? $patients->dbo : old('dbo') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="weight">Weight</label>
-                        <input type="number" class="form-control" name="weight" id="weight" placeholder="eg. 90" value="{{ isset($patients) ? $patients->height : '' }}">
+                        <input type="number" class="form-control" name="weight" id="weight" placeholder="eg. 90" value="{{ isset($patients) ? $patients->height : old('weight') }}">
                     </div>
 
                     <div class="form-group">
@@ -74,25 +74,25 @@
                     <div class="form-group">
                         <label for="surname">Surname</label>
                         <input type="text" class="form-control" name="surname" id="surname"
-                            placeholder="Enter patient surname" value="{{ isset($patients) ? $patients->surname : '' }}">
+                            placeholder="Enter patient surname" value="{{ isset($patients) ? $patients->surname : old('surname') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="identity_number">ID </label>
                         <input type="number" class="form-control" name="identity_number" id="identity_number"
-                            placeholder="Enter patient id" value="{{ isset($patients) ? $patients->identity_number : '' }}" @if(isset($patients))  @endif>
+                            placeholder="Enter patient id" value="{{ isset($patients) ? $patients->identity_number : old('identity_number') }}" @if(isset($patients))  @endif>
                     </div>
 
                     <div class="form-group">
                         <label for="nationality">Nationality</label>
                         <input type="text" class="form-control" name="nationality" id="nationality"
-                            placeholder="eg. Cypriot" value="{{ isset($patients) ? $patients->nationality : '' }}">
+                            placeholder="eg. Cypriot" value="{{ isset($patients) ? $patients->nationality : old('nationality') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="height">Height</label>
                         <input type="number" class="form-control" name="height" id="height" placeholder="Add height in cm... eg. 180"
-                            step="any" min="0" value="{{ isset($patients) ? $patients->height : '' }}">
+                            step="any" min="0" value="{{ isset($patients) ? $patients->height : old('height') }}">
                     </div>
 
                     <div class="form-group">

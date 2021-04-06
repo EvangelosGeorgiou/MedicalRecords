@@ -40,7 +40,7 @@
                     <label for="doc_name">Doctor Name</label>
                     <input type="text" id="doc_name" name="doc_name" class="form-control"
                         placeholder="Enter doctor name"
-                        value="{{ isset($visitHistory) ? $visitHistory->doc_name : '' }}">
+                        value="{{ isset($visitHistory) ? $visitHistory->doc_name : old('doc_name') }}">
                 </div>
 
                 <div class="form-group">
@@ -64,19 +64,19 @@
                     <label for="reason_of_visit">Reason of Visit</label>
                     <input type="text" class="form-control" name="reason_of_visit" id="reason_of_visit"
                         placeholder="Enter reason of visit"
-                        value="{{ isset($visitHistory) ? $visitHistory->reason_of_visit : '' }}">
+                        value="{{ isset($visitHistory) ? $visitHistory->reason_of_visit : old('reason_of_visit') }}">
                 </div>
 
                 <div class="form-group">
                     <label for="description">Description of the visit</label>
                     <textarea name="description" id="description" cols="10" rows="5" class="form-control"
-                        placeholder="Informations about the problem of the patient">{{ isset($visitHistory) ? $visitHistory->description : '' }}</textarea>
+                        placeholder="Informations about the problem of the patient">{{ isset($visitHistory) ? $visitHistory->description : old('description') }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="date">Date of Visit</label>
                     <input type="date" class="form-control" name="date" id="date"
-                        value="{{ isset($visitHistory) ? $visitHistory->date : '' }}">
+                        value="{{ isset($visitHistory) ? $visitHistory->date : old('date') }}">
                 </div>
 
 

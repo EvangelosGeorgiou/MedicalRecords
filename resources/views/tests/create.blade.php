@@ -34,33 +34,33 @@
                     <div class="form-group">
                         <label for="testName">Test name</label>
                         <input type="text" id="testName" name="testName" class="form-control"
-                            placeholder="Enter test name" value="{{ isset($test) ? $test->testName : '' }}">
+                            placeholder="Enter test name" value="{{ isset($test) ? $test->testName : old('testName') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="testReason">Test reason</label>
                         <input type="text" id="testReason" name="testReason" class="form-control"
                             placeholder="Enter the reason of the test"
-                            value="{{ isset($test) ? $test->testReason : '' }}">
+                            value="{{ isset($test) ? $test->testReason : old('testReason') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="place">Place test taken</label>
                         <input type="text" id="place" name="place" class="form-control"
                             placeholder="Enter the place test took place"
-                            value="{{ isset($test) ? $test->place : '' }}">
+                            value="{{ isset($test) ? $test->place : old('place') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="comments">Test Comments</label>
                         <textarea name="comments" id="comments" cols="10" rows="3" class="form-control"
-                            placeholder="Enter comments for the doctor">{{ isset($test) ? $test->comments : '' }}</textarea>
+                            placeholder="Enter comments for the doctor">{{ isset($test) ? $test->comments : old('comments') }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="date">Date </label>
                         <input type="date" class="form-control" name="date" id="date"
-                            value="{{ isset($test) ? $test->date : '' }}">
+                            value="{{ isset($test) ? $test->date : old('date') }}">
                     </div>
 
                     <input type="hidden" name="patient_id" name="patient_id" value="{{ $patients->id }}">

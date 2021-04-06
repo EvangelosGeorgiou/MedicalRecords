@@ -34,20 +34,20 @@
                     <div class="form-group">
                         <label for="description">Diet Description</label>
                         <input type="hidden" name="description" id="description"
-                            value="{{ isset($diets) ? $diets->description : '' }}">
+                            value="{{ isset($diets) ? $diets->description : old('description') }}">
                         <trix-editor input="description"></trix-editor>
                     </div>
 
                     <div class="form-group">
                         <label for="start_date">Diet Date Begin</label>
                         <input type="start_date" class="form-control" name="start_date" id="start_date"
-                            value="{{ isset($diets) ? $diets->start_date : '' }}">
+                            value="{{ isset($diets) ? $diets->start_date : old('start_date') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="finish_date">Diet Date Finish</label>
                         <input type="date" class="form-control" name="finish_date" id="finish_date"
-                            value="{{ isset($diets) ? $diets->finish_date : '' }}">
+                            value="{{ isset($diets) ? $diets->finish_date : old('finish_date') }}">
                     </div>
 
                     <input type="hidden" name="patient_id" name="patient_id" value="{{$patients->id}}">

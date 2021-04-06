@@ -67,13 +67,13 @@
                     <div class="form-group">
                         <label for="description">Description</label>
                         <textarea name="description" id="description" cols="10" rows="5"
-                            class="form-control">{{ isset($disorder) ? $disorder->description : '' }}</textarea>
+                            class="form-control">{{ isset($disorder) ? $disorder->description : old('description') }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="date">Date </label>
                         <input type="date" class="form-control" name="date" id="date"
-                            value="{{ isset($disorder) ? $disorder->date : '' }}">
+                            value="{{ isset($disorder) ? $disorder->date : old('date') }}">
                     </div>
 
                     <input type="hidden" name="patient_id" name="patient_id" value="{{ $patients->id }}">

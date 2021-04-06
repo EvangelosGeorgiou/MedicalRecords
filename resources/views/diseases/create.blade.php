@@ -34,7 +34,7 @@
                     <div class="form-group">
                         <label for="doc_name">Doctor Name</label>
                         <input type="text" name="doc_name" id="doc_name" class="form-control"
-                            placeholder="Enter doctor name" value="{{ isset($disease) ? $disease->doc_name : '' }}">
+                            placeholder="Enter doctor name" value="{{ isset($disease) ? $disease->doc_name : old('doc_name') }}">
                     </div>
 
                     <div class="form-group">
@@ -73,28 +73,28 @@
                     <div class="form-group">
                         <label for="description">Description</label>
                         <input type="hidden" name="description" id="description"
-                            value="{{ isset($disease) ? $disease->description : '' }}">
+                            value="{{ isset($disease) ? $disease->description : old('description') }}">
                         <trix-editor input="description"></trix-editor>
                     </div>
 
                     <div class="form-group">
                         <label for="diagnosis">Diagnosis</label>
                         <input type="hidden" name="diagnosis" id="diagnosis"
-                            value="{{ isset($disease) ? $disease->diagnosis : '' }}">
+                            value="{{ isset($disease) ? $disease->diagnosis : old('diagnosis') }}">
                         <trix-editor input="diagnosis"></trix-editor>
                     </div>
 
                     <div class="form-group">
                         <label for="symptoms">Symptoms</label>
                         <input type="hidden" name="symptoms" id="symptoms"
-                            value="{{ isset($disease) ? $disease->symptoms : '' }}">
+                            value="{{ isset($disease) ? $disease->symptoms : old('symptoms') }}">
                         <trix-editor input="symptoms"></trix-editor>
                     </div>
 
                     <div class="form-group">
                         <label for="date">Date </label>
                         <input type="date" class="form-control" name="date" id="date"
-                            value="{{ isset($disease) ? $disease->date : '' }}">
+                            value="{{ isset($disease) ? $disease->date : old('date') }}">
                     </div>
 
                     <input type="hidden" name="patient_id" name="patient_id" value="{{ $patients->id }}">

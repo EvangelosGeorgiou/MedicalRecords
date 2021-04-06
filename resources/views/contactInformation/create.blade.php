@@ -41,13 +41,13 @@
 
                     <div class="form-group">
                         <label for="country">Country</label>
-                        <input type="text" id="country" name="country" class="form-control" placeholder="Enter patient country" value="{{ isset($contacts) ? $contacts->country : '' }}" >
+                        <input type="text" id="country" name="country" class="form-control" placeholder="Enter patient country" value="{{ isset($contacts) ? $contacts->country : old('country') }}" >
                     </div>
 
                     <div class="form-group">
                         <label for="address">Address</label>
                         <input type="address" class="form-control" name="address" id="address"
-                            placeholder="Enter address" value="{{ isset($contacts) ? $contacts->address : '' }}" >
+                            placeholder="Enter address" value="{{ isset($contacts) ? $contacts->address : old('address') }}" >
                     </div>
 
                     <input type="hidden" name="patient_id" name="patient_id" value="{{$patients->id}}">
@@ -60,13 +60,13 @@
                     <div class="form-group">
                         <label for="city">City</label>
                         <input type="text" class="form-control" name="city" id="city"
-                            placeholder="Enter city" value="{{ isset($contacts) ? $contacts->city : '' }}">
+                            placeholder="Enter city" value="{{ isset($contacts) ? $contacts->city : old('city') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="postal_code">Postal Code</label>
                         <input type="number" class="form-control" name="postal_code" id="postal_code"
-                            placeholder="eg. 3080" value="{{ isset($contacts) ? $contacts->postal_code : '' }}">
+                            placeholder="eg. 3080" value="{{ isset($contacts) ? $contacts->postal_code : old('postal_code') }}">
                     </div>
 
                 </div>

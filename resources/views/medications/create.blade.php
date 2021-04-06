@@ -37,25 +37,25 @@
                             <label for="name">Medication Name</label>
                             <input type="text" id="name" name="name" class="form-control"
                                 placeholder="Enter patient name"
-                                value="{{ isset($medication) ? $medication->name : '' }}">
+                                value="{{ isset($medication) ? $medication->name : old('name') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="start_date">Medication Start Date</label>
                             <input type="date" class="form-control" name="start_date" id="start_date"
-                                value="{{ isset($medication) ? $medication->start_date : '' }}">
+                                value="{{ isset($medication) ? $medication->start_date : old('start_date') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="finish_date">Medication Finish Date</label>
                             <input type="date" class="form-control" name="finish_date" id="finish_date"
-                                value="{{ isset($medication) ? $medication->finish_date : '' }}">
+                                value="{{ isset($medication) ? $medication->finish_date : old('finish_date') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="instuctions">Instructions</label>
                             <textarea type="text" name="instuctions" id="instuctions" class="form-control"
-                                rows="5">{{ isset($medication) ? $medication->instuctions : ''  }}</textarea>
+                                rows="5">{{ isset($medication) ? $medication->instuctions : old('instructions')  }}</textarea>
                         </div>
 
                         <button class="btn btn-success"
@@ -68,27 +68,27 @@
                             <label for="doctor_name">Doctor Name</label>
                             <input type="text" class="form-control" name="doctor_name" id="doctor_name"
                                 placeholder="Enter doctor name who gave the medication"
-                                value="{{ isset($medication) ? $medication->doctor_name : '' }}">
+                                value="{{ isset($medication) ? $medication->doctor_name : old('doctor_name') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="dosage">Dosage</label>
                             <input type="text" class="form-control" name="dosage" id="dosage"
                                 placeholder="Enter medication dosage"
-                                value="{{ isset($medication) ? $medication->dosage : '' }}">
+                                value="{{ isset($medication) ? $medication->dosage : old('dosage') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="purpose">Purpose of the medication</label>
                             <input type="text" class="form-control" name="purpose" id="purpose"
                                 placeholder="Enter purpose of the medication"
-                                value="{{ isset($medication) ? $medication->purpose : '' }}">
+                                value="{{ isset($medication) ? $medication->purpose : old('purpose') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="side_effects">Side Effects</label>
                             <textarea type="text" name="side_effects" id="side_effects" class="form-control"
-                                rows="5">{{ isset($medication) ? $medication->side_effects : ''  }}</textarea>
+                                rows="5">{{ isset($medication) ? $medication->side_effects : old('side_effects')  }}</textarea>
                         </div>
 
                         <input type="hidden" id="patient_id" name="patient_id" value="{{$patients->id}}">

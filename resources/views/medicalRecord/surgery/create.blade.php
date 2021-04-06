@@ -38,33 +38,33 @@
                                 <label for="name">Surgery Name</label>
                                 <input type="text" class="form-control" name="name" id="name"
                                     placeholder="Enter surgery name"
-                                    value="{{ isset($surgery) ? $surgery->name : '' }}">
+                                    value="{{ isset($surgery) ? $surgery->name : old('name') }}">
                             </div>
 
                             <div class="form-group">
                                 <label for="datetime">Date & Time of the Surgery</label>
                                 <input type="date" class="form-control" name="datetime" id="datetime"
-                                    value="{{ isset($surgery) ? $surgery->datetime : '' }}">
+                                    value="{{ isset($surgery) ? $surgery->datetime : old('datetime') }}">
                             </div>
 
                             <div class="form-group">
                                 <label for="doc_name">Doctor name</label>
                                 <input type="text" class="form-control" name="doc_name" id="doc_name"
                                     placeholder="Enter doctor name who made the surgery"
-                                    value="{{ isset($surgery) ? $surgery->doc_name : '' }}">
+                                    value="{{ isset($surgery) ? $surgery->doc_name : old('doc_name') }}">
                             </div>
 
                             <div class="form-group">
                                 <label for="assistants">Assistants name</label>
                                 <input type="hidden" name="assistants" id="assistants"
-                                    value="{{ isset($surgery) ? $surgery->assistants : '' }}">
+                                    value="{{ isset($surgery) ? $surgery->assistants : old('assistants') }}">
                                 <trix-editor input="assistants"></trix-editor>
                             </div>
 
                             <div class="form-group">
                                 <label for="complications">Complications</label>
                                 <input type="hidden" name="complications" id="complications"
-                                    value="{{ isset($surgery) ? $surgery->complications : '' }}">
+                                    value="{{ isset($surgery) ? $surgery->complications : old('complications') }}">
                                 <trix-editor input="complications"></trix-editor>
                             </div>
 
@@ -172,12 +172,12 @@
                 <div>
                     <div class="form-group">
                         <label for="procedure_name">Procedure name</label>
-                        <input type="text" class="form-control" name="procedures[` + (x - 2) + `][name]" id="procedure_name">
+                        <input type="text" class="form-control" name="procedures[` + (x - 2) + `][name]" id="procedure_name" >
                     </div>
 
                     <div class="form-group">
                         <label for="procedure_description">Procedure Description</label>
-                        <textarea name="procedures[` + (x - 2) + `][description]" id="procedure_description" cols="5" rows="5" class="form-control"></textarea>
+                        <textarea name="procedures[` + (x - 2) + `][description]" id="procedure_description" cols="5" rows="5" class="form-control" ></textarea>
                     </div>
                 </div>
               `); // add input field

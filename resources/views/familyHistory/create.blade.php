@@ -45,20 +45,20 @@
                             <label for="family_member_name">Family Member Name</label>
                             <input type="text" id="family_member_name" name="family_member_name" class="form-control"
                                 placeholder="Enter family member name"
-                                value="{{ isset($familyHistory) ? $familyHistory->family_member_name : '' }}">
+                                value="{{ isset($familyHistory) ? $familyHistory->family_member_name : old('family_member_name') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="diagnosed_age">Diagnose Age</label>
                             <input type="number" class="form-control" name="diagnosed_age" id="diagnosed_age"
                                 placeholder="Daignosed age"
-                                value="{{ isset($familyHistory) ? $familyHistory->diagnosed_age : '' }}">
+                                value="{{ isset($familyHistory) ? $familyHistory->diagnosed_age : old('diagnosed_age') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="description">Description</label>
                             <input type="hidden" name="description" id="description"
-                                value="{{ isset($familyHistory) ? $familyHistory->description : '' }}">
+                                value="{{ isset($familyHistory) ? $familyHistory->description : old('description') }}">
                             <trix-editor input="description"></trix-editor>
                         </div>
 
@@ -83,21 +83,21 @@
                             <label for="diagnosed_year">Diagnosed Year</label>
                             <input type="number" class="form-control" name="diagnosed_year" id="diagnosed_year"
                                 placeholder="Enter diagnosed year"
-                                value="{{ isset($familyHistory) ? $familyHistory->diagnosed_year : '' }}">
+                                value="{{ isset($familyHistory) ? $familyHistory->diagnosed_year : old('diagnosed_year') }}">
                         </div>
 
                         <div class="form-group">
                             <label for="disease_name">Disease Name</label>
                             <input type="text" class="form-control" name="disease_name" id="disease_name"
                                 placeholder="Enter disease name"
-                                value="{{ isset($familyHistory) ? $familyHistory->disease_name : '' }}"
+                                value="{{ isset($familyHistory) ? $familyHistory->disease_name : old('disease_name') }}"
                                 @if(isset($familyHistory)) @endif>
                         </div>
 
                         <div class="form-group">
                             <label for="extra_notes">Extra notes for the doctor</label>
                             <input type="hidden" name="extra_notes" id="extra_notes"
-                                value="{{ isset($familyHistory) ? $familyHistory->extra_notes : '' }}">
+                                value="{{ isset($familyHistory) ? $familyHistory->extra_notes : old('extra_notes') }}">
                             <trix-editor input="extra_notes"></trix-editor>
                             {{-- <textarea name="extra_notes" id="extra_notes" cols="10" rows="5" class="form-control" placeholder="Enter notes for the doctor">{{ isset($familyHistory) ? $familyHistory->extra_notes : '' }}</textarea>
                             --}}

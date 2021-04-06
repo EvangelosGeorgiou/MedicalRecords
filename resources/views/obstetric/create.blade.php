@@ -30,7 +30,7 @@
 
                 <div class="form-group">
                     <label for="doctor_name">Doctor Name</label>
-                    <input type="text" class="form-control" name="doctor_name" id="doctor_name" placeholder="Enter doctor name" value="{{ isset($obstetric) ? $obstetric->doctor_name : '' }}">
+                    <input type="text" class="form-control" name="doctor_name" id="doctor_name" placeholder="Enter doctor name" value="{{ isset($obstetric) ? $obstetric->doctor_name : old('doctor_name') }}">
                 </div>
 
                 <div class="form-group">
@@ -64,18 +64,18 @@
 
                 <div class="form-group">
                     <label for="complications">Pregnancy Complications</label>
-                    <input  type="hidden" name="complications" id="complications" value="{{ isset($obstetric) ? $obstetric->complications : '' }}">
+                    <input  type="hidden" name="complications" id="complications" value="{{ isset($obstetric) ? $obstetric->complications : old('complications') }}">
                     <trix-editor input="complications"></trix-editor>
                 </div>
 
                 <div class="form-group">
                     <label for="date">Date</label>
-                    <input type="date" name="date" id="date" class="form-control" value="{{ isset($obstetric) ? $obstetric->date : '' }}">
+                    <input type="date" name="date" id="date" class="form-control" value="{{ isset($obstetric) ? $obstetric->date : old('date') }}">
                 </div>
 
                 <div class="form-group">
                     <label for="number_of_childer">Number of Children/s</label>
-                    <input type="number" name="number_of_childer" id="number_of_childer" class="form-control" value="{{ isset($obstetric) ? $obstetric->number_of_childer : '' }}" onchange="addChildren()">
+                    <input type="number" name="number_of_childer" id="number_of_childer" class="form-control" value="{{ isset($obstetric) ? $obstetric->number_of_childer : old('number_of_childer') }}" onchange="addChildren()">
                 </div>
 
                 <div class="childrens-div"></div>

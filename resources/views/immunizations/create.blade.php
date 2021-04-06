@@ -28,19 +28,19 @@
 
                     <div class="form-group">
                         <label for="vaccine_name">Vaccine Name</label>
-                        <input type="text" id="vaccine_name" name="vaccine_name" class="form-control">
+                        <input type="text" id="vaccine_name" name="vaccine_name" class="form-control" value="{{ old('vaccine_name') }}">
                     </div>
 
                     <div class="form-group">
                         <label for="description">Description</label>
                         <input type="hidden" name="description" id="description"
-                            value="{{ isset($diets) ? $diets->description : '' }}">
+                            value="{{  old('description') }}">
                         <trix-editor input="description"></trix-editor>
                     </div>
 
                     <div class="form-group">
                         <label for="date">Date </label>
-                        <input type="date" class="form-control" name="date" id="date">
+                        <input type="date" class="form-control" name="date" id="date" value="{{ old('date') }}">
                     </div>
 
                     <input type="hidden" name="patient_id" name="patient_id" value="{{ $patients->id }}">
