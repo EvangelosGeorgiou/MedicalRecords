@@ -1,10 +1,10 @@
 @extends('layouts.medical_record')
 
 @section('content')
-
+<div class="move-context">
 <div class="card container">
     <div class="card-header">
-        <h4>{{ $patients->name.$patients->surname }}</h4>
+        <h4>{{ $patients->name." ".$patients->surname }}</h4>
     </div>
 
     <div class="card-body">
@@ -52,18 +52,19 @@
                             <th>Finish Date:</th>
                             <th>{{ $medication->finish_date }}</th>
                         </tr>
-
+                        @if($medication->side_effects != null)
                         <tr>
                             <th>Side effects:</th>
                             <th>{{ $medication->side_effects }}</th>
                         </tr>
+                        @endif
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
-
+</div>
 @endsection
 
 @section('css')
@@ -76,5 +77,8 @@
         color: black
     }
 
+.move-context{
+    margin-bottom: 370px
+}
 </style>
 @endsection

@@ -1,8 +1,8 @@
 @extends(str_contains(url()->current(), 'create') ? 'layouts.home_page' : 'layouts.medical_record')
 
 @section('content')
-
-<div class="card-body">
+<div class="move-context mb-4">
+<div class="card container">
     <div class="card-header">
         {{ isset($patients) ? 'Edit Patient' : 'Add Patient' }}
     </div>
@@ -113,7 +113,7 @@
         </form>
     </div>
 </div>
-
+</div>
 @endsection
 
 @section('scripts')

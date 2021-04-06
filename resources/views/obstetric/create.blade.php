@@ -1,7 +1,7 @@
 @extends('layouts.medical_record')
 
 @section('content')
-
+<div class="move-context mb-4">
     <div class="card container">
         <div class="card-header">
             {{ isset($obstetric) ? 'Edit Patient Obstetric' : 'Add Patient Obstetric' }}
@@ -86,7 +86,7 @@
             </form>
         </div>
     </div>
-
+</div>
 @endsection
 
 @section('scripts')

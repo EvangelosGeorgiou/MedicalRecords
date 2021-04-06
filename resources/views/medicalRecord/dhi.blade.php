@@ -9,8 +9,8 @@
 @endsection
 
 @section('content')
-
-<h2 class="container">{{ $patients->name }} {{ $patients->surname }} Medical Record</h2>
+<h2 class="container" style="margin-left: 380px">{{ $patients->name }} {{ $patients->surname }} Medical Record</h2>
+<div class="move-context">
 <div class="card shadow mb-4 container mt-4">
     <!-- Card Header - Accordion -->
     <a href="#collapseCardExample" class="d-block card-header" data-toggle="collapse" role="button" aria-expanded="true"
@@ -183,14 +183,8 @@
                     </div>
                 </div>
             </div>
-
-
-
-
         </div>
     </div>
+</div>
 
-
-
-
-    @endsection
+@endsection

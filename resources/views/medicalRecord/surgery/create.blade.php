@@ -2,113 +2,121 @@
 
 @section('content')
 
-{{-- na valo surgery type j description  --}}
+<div class="move-context">
+    <div class="container mb-3">
 
-<div class="container mb-3">
+        <div class="card">
+            <div class="card-header">
+                {{ isset($surgery)? 'Edit Patient Surgery' : 'Add Patient Surgery Information' }}
+            </div>
 
-    <div class="card">
-        <div class="card-header">
-            {{ isset($surgery)? 'Edit Patient Surgery' : 'Add Patient Surgery Information' }}
-        </div>
+            <form action="{{ isset($surgery) ? route('surgeries.update',$surgery->id) : route('surgeries.store' ) }}"
+                method="POST" enctype="multipart/form-data">
+                @csrf
 
-        <form action="{{ isset($surgery) ? route('surgeries.update',$surgery->id) : route('surgeries.store' ) }}" method="POST" enctype="multipart/form-data">
-            @csrf
-
-            @if(isset($surgery))
-            @method('PUT')
-            @endif
-
-            <div class="card-body">
-
-                @if($errors->any())
-                <div class="alert alert-danger">
-                    <ul class="list-group">
-                        @foreach($errors->all() as $error)
-                        <li class="list-group-item text-danger">
-                            {{$error}}
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
+                @if(isset($surgery))
+                @method('PUT')
                 @endif
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name">Surgery Name</label>
-                            <input type="text" class="form-control" name="name" id="name"
-                                placeholder="Enter surgery name" value="{{ isset($surgery) ? $surgery->name : '' }}">
-                        </div>
+                <div class="card-body">
 
-                        <div class="form-group">
-                            <label for="datetime">Date & Time of the Surgery</label>
-                            <input type="date" class="form-control" name="datetime" id="datetime"
-                                 value="{{ isset($surgery) ? $surgery->datetime : '' }}">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="doc_name">Doctor name</label>
-                            <input type="text" class="form-control" name="doc_name" id="doc_name"
-                                placeholder="Enter doctor name who made the surgery" value="{{ isset($surgery) ? $surgery->doc_name : '' }}">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="assistants">Assistants name</label>
-                            <input type="hidden" name="assistants" id="assistants" value="{{ isset($surgery) ? $surgery->assistants : '' }}">
-                            <trix-editor input="assistants" ></trix-editor>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="complications">Complications</label>
-                            <input type="hidden" name="complications" id="complications" value="{{ isset($surgery) ? $surgery->complications : '' }}">
-                            <trix-editor input="complications" ></trix-editor>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="body_part">Body Part</label>
-                            <select name="body_part" id="body_part" class="form-control">
-                                <option value="">Select a body part...</option>
-                                @foreach($body_parts as $part)
-                                    <option value="{{ $part->name }}" @if(isset($surgery) && $surgery->body_part==$part->name) selected @endif>{{ $part->name }} </option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <input type="hidden" id="patient_id" name="patient_id" value="{{$patients->id}}">
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="list-group">
+                            @foreach($errors->all() as $error)
+                            <li class="list-group-item text-danger">
+                                {{$error}}
+                            </li>
+                            @endforeach
+                        </ul>
                     </div>
+                    @endif
 
-                    <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="name">Surgery Name</label>
+                                <input type="text" class="form-control" name="name" id="name"
+                                    placeholder="Enter surgery name"
+                                    value="{{ isset($surgery) ? $surgery->name : '' }}">
+                            </div>
 
-                    @if(isset($surgery) && $surgery->procedures != null)
-                    <?php $i=0 ?>
+                            <div class="form-group">
+                                <label for="datetime">Date & Time of the Surgery</label>
+                                <input type="date" class="form-control" name="datetime" id="datetime"
+                                    value="{{ isset($surgery) ? $surgery->datetime : '' }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="doc_name">Doctor name</label>
+                                <input type="text" class="form-control" name="doc_name" id="doc_name"
+                                    placeholder="Enter doctor name who made the surgery"
+                                    value="{{ isset($surgery) ? $surgery->doc_name : '' }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="assistants">Assistants name</label>
+                                <input type="hidden" name="assistants" id="assistants"
+                                    value="{{ isset($surgery) ? $surgery->assistants : '' }}">
+                                <trix-editor input="assistants"></trix-editor>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="complications">Complications</label>
+                                <input type="hidden" name="complications" id="complications"
+                                    value="{{ isset($surgery) ? $surgery->complications : '' }}">
+                                <trix-editor input="complications"></trix-editor>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="body_part">Body Part</label>
+                                <select name="body_part" id="body_part" class="form-control">
+                                    <option value="">Select a body part...</option>
+                                    @foreach($body_parts as $part)
+                                    <option value="{{ $part->name }}" @if(isset($surgery) && $surgery->
+                                        body_part==$part->name) selected @endif>{{ $part->name }} </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <input type="hidden" id="patient_id" name="patient_id" value="{{$patients->id}}">
+                        </div>
+
+                        <div class="col-md-6">
+
+                            @if(isset($surgery) && $surgery->procedures != null)
+                            <?php $i=0 ?>
                             @foreach($surgery->procedures as $procedure)
 
                             <div class="form-group">
                                 <label for="procedure_name">Procedure name</label>
-                                <input type="text" class="form-control" name="procedures[{{ $i }}][name]" id="procedure_name" value="{{ $procedure['name']}}">
+                                <input type="text" class="form-control" name="procedures[{{ $i }}][name]"
+                                    id="procedure_name" value="{{ $procedure['name']}}">
                             </div>
 
                             <div class="form-group">
                                 <label for="procedure_description">Procedure Description</label>
-                                <textarea cols="5" rows="3" name="procedures[{{ $i }}][description]" id="procedure_description" class="form-control">{{ $procedure['description']}}</textarea>
+                                <textarea cols="5" rows="3" name="procedures[{{ $i }}][description]"
+                                    id="procedure_description"
+                                    class="form-control">{{ $procedure['description']}}</textarea>
                             </div>
                             <hr>
                             <?php $i++ ?>
                             @endforeach
 
-                    @else
+                            @else
 
-                    <div class="d-flex flex-row-reverse">
-                        <button class="btn btn-info btn-sm add-btn">Add Procedure</button>
-                    </div>
+                            <div class="d-flex flex-row-reverse">
+                                <button class="btn btn-info btn-sm add-btn">Add Procedure</button>
+                            </div>
 
-                    <div class="inputs"></div>
+                            <div class="inputs"></div>
 
-                    @endif
+                            @endif
 
 
 
-                        {{-- <div class="form-group">
+                            {{-- <div class="form-group">
                             <label for="procedure_name">Procedure name</label>
                             <input type="text" class="form-control" name="procedure_name" id="procedure_name">
                         </div>
@@ -119,17 +127,18 @@
                             <trix-editor input="procedure_description"></trix-editor>
 
                         </div> --}}
+                        </div>
+                    </div>
+
+
+                    <div class="text-center">
+                        <button class="btn btn-success"
+                            type="submit">{{ isset($surgery)? 'Update Surgery' : 'Add Surgery' }}</button>
                     </div>
                 </div>
-
-
-                <div class="text-center">
-                    <button class="btn btn-success" type="submit">{{ isset($surgery)? 'Update Surgery' : 'Add Surgery' }}</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-
 </div>
 
 @endsection
@@ -163,12 +172,12 @@
                 <div>
                     <div class="form-group">
                         <label for="procedure_name">Procedure name</label>
-                        <input type="text" class="form-control" name="procedures[`+(x-2)+`][name]" id="procedure_name">
+                        <input type="text" class="form-control" name="procedures[` + (x - 2) + `][name]" id="procedure_name">
                     </div>
 
                     <div class="form-group">
                         <label for="procedure_description">Procedure Description</label>
-                        <textarea name="procedures[`+(x-2)+`][description]" id="procedure_description" cols="5" rows="5" class="form-control"></textarea>
+                        <textarea name="procedures[` + (x - 2) + `][description]" id="procedure_description" cols="5" rows="5" class="form-control"></textarea>
                     </div>
                 </div>
               `); // add input field

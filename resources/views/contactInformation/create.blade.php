@@ -1,10 +1,18 @@
 @extends('layouts.medical_record')
 
-@section('content')
+@section('css')
+    <style>
+        .move-context{
+            margin-bottom: 340px
+        }
+    </style>
+@endsection
 
-<div class="card-body">
+@section('content')
+<div class="move-context">
+<div class="card container">
     <div class="card-header">
-        {{ isset($contacts) ? 'Edit Contact Infromation' : 'Add Contact Information' }} 
+        {{ isset($contacts) ? 'Edit Contact Infromation' : 'Add Contact Information' }}
     </div>
 
     <div class="card-body">
@@ -66,5 +74,5 @@
         </form>
     </div>
 </div>
-
+</div>
 @endsection

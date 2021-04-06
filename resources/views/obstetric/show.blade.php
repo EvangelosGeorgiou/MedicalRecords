@@ -4,7 +4,7 @@
 
 <div class="card container">
     <div class="card-header">
-        <h4>{{ $patients->name.$patients->surname }}</h4>
+        <h4>{{ $patients->name." ".$patients->surname }}</h4>
     </div>
 
     <div class="card-body">

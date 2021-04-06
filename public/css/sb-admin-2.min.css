@@ -40,6 +40,10 @@
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 }
 
+.move-context{
+    margin-left: 200px
+}
+
 *,
 ::after,
 ::before {
@@ -4271,7 +4275,7 @@ input[type=submit].btn-block {
 
 .nav-link:focus,
 .nav-link:hover {
-    text-decoration: none
+    text-decoration: none;
 }
 
 .nav-link.disabled {
@@ -11191,8 +11195,11 @@ a:focus {
 }
 
 .sidebar {
+    position: fixed;
+    z-index: 1;
     width: 6.5rem;
-    min-height: 100vh
+    min-height: 100vh;
+    border-right: 2px solid #87CEEB;
 }
 
 .sidebar .nav-item {
@@ -11558,7 +11565,7 @@ a:focus {
 }
 
 .sidebar-dark .nav-item .nav-link {
-    color: rgba(255, 255, 255, .8)
+    color: #87CEEB
 }
 
 .sidebar-dark .nav-item .nav-link i {
@@ -11598,7 +11605,7 @@ a:focus {
 }
 
 .sidebar-dark #sidebarToggle:hover {
-    background-color: rgba(255, 255, 255, .25)
+    background-color: rgba(197, 81, 81, 0.25)
 }
 
 .sidebar-dark.toggled #sidebarToggle::after {
@@ -12239,3 +12246,4 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
     width: 100%
 }
+

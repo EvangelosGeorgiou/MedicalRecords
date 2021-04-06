@@ -1,7 +1,7 @@
 @extends('layouts.medical_record')
 
 @section('content')
-
+<div class="move-context">
 <form action="{{ route('habits.store')  }}" method="post" enctype="multipart/form-data">
     @csrf
 
@@ -38,7 +38,7 @@
     </div>
 
 </form>
-
+</div>
 @endsection
 
 @section('scripts')
@@ -82,4 +82,10 @@
 <link
     href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
     rel="stylesheet">
+
+    <style>
+        .move-context{
+            margin-bottom: 450px
+        }
+    </style>
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.medical_record')
 
 @section('content')
-
+<div class="move-context pt-3">
     <div class="card container">
         <div class="card-header">
             <h3>{{ $patients->name }} Family History</h3>
@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-
+</div>
 @endsection
 
 @section('css')
@@ -65,6 +65,8 @@
     tbody tr th:last-child {
         color: black
     }
-
+    .move-context{
+    margin-bottom: 300px
+}
 </style>
 @endsection
