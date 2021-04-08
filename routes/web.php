@@ -68,6 +68,7 @@ Route::middleware(['auth'])->group(function(){
 
     Route::resource('medications','MedicationsController')->except(['create']);
     Route::get('medications/create/{patient_id}','MedicationsController@create')->name('medications.create');
+    Route::post('medications/create/{patient_id}','MedicationsController@confirmStore')->name('medications.confirmStore');
 
     Route::resource('surgeries','SurgeriesController')->except(['create']);
     Route::get('surgeries/create/{patient_id}','SurgeriesController@create')->name('surgeries.create');
