@@ -122,28 +122,12 @@ class DisordersController extends Controller {
         $body_part_id = $disorder->body_part_id;
 
         // PatientBodyParts::where('bodyPartID','=',$body_part_id)->where('patient_id','=',$disorder->patient_id)->delete();
-        // $disorder -> delete();
+         $disorder -> delete();
 
         session() -> flash('success', 'Disorder deleted successfuly');
 
         return redirect(route('illness.show', $patients_id));
     }
 
-    public function fetch(Request $request) {
-        if ($request -> get('query')) {
-            $query = $request -> get('query');
-            $data = ICD_CODE::where('name', 'LIKE', "%{$query}%") -> get();
-            $output = '<ul class="dropdown-menu" style="display:block; position:relative;">';
-            foreach($data as $row) {
-                //   echo $row;
-                $output .= '
-                <li> <a href = "#" > '.$row->icd_code.' / '.$row->name.' <input type = "hidden"
-                value = "'.$row->id.'"
-                name = "icd_code_id2"> </a></li>
-                    ';
-            }
-            $output .= '</ul>';
-            echo $output;
-        }
-    }
+
 }

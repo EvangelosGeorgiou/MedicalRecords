@@ -2,7 +2,7 @@
 
 @section('content')
 <h2 class="container" style="margin-left: 380px">{{ $patients->name }} {{ $patients->surname }} Medical Record</h2>
-<div class="move-context">
+<div class="move-context2">
     <!-- DataTales Example -->
     <div class="container">
         <div class="card shadow mb-5 mt-4">
@@ -64,9 +64,9 @@
 
 
     <style>
-        .move-context{
+        .move-context2{
             margin-left: 150px;
-            margin-bottom: 300px
+            margin-bottom: 250px
         }
     </style>
 @endsection

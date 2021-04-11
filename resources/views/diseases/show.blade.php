@@ -28,10 +28,12 @@
                                 <th>{!! $disease->symptoms !!}</th>
                             </tr>
 
+                            @if($disease->description != null)
                             <tr>
                                 <th>Description: </th>
                                 <th>{!! $disease->description !!}</th>
                             </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>

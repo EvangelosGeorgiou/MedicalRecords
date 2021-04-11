@@ -15,21 +15,29 @@
                         <p>{{ $disorder->icdCodeInfo['name'] }}</p>
                     </div>
 
+                    @if($disorder->description != null)
                     <div>
                         <label>Description</label>
                         <p>{{ $disorder->description }}</p>
                     </div>
+                    @else
+                    <div>
+                        <label>Date</label>
+                        <p>{{ $disorder->date }}</p>
+                    </div>
+                    @endif
                 </div>
                 <div class="col-md-6">
                     <div>
                         <label>ICD Code</label>
                         <p>{{ $disorder->icdCodeInfo['icd_code'] }}</p>
                     </div>
-
+                    @if($disorder->description != null)
                     <div>
                         <label>Date</label>
                         <p>{{ $disorder->date }}</p>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

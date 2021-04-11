@@ -1,5 +1,11 @@
 @extends('layouts.medical_record')
-
+@section('css')
+    <style>
+        .move-context{
+        margin-bottom:200px
+    }
+    </style>
+@endsection
 @section('content')
 <div class="move-context mb-4">
     <div class="card container">
