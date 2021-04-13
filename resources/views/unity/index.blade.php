@@ -32,7 +32,7 @@
         console.log("test");
         unityInstance.SendMessage('PatientIDText', 'setPatientID', "{{ $patients->id }}");
     };
-    setTimeout(loadFrame, 3000);
+    setTimeout(loadFrame, 5000);
 
 </script>
 

@@ -133,7 +133,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('unity.index',$patients->id) }}" target="_blank">
-                                <span>Go to App</span></a>
+                                <span>Digital Twin</span></a>
                         </li>
 
                         <div class="topbar-divider d-none d-sm-block"></div>
