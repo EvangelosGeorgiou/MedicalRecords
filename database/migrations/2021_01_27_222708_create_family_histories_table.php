@@ -19,8 +19,8 @@ class CreateFamilyHistoriesTable extends Migration
             $table->integer('diagnosed_age');
             $table->integer('diagnosed_year');
             $table->string('disease_name');
-            $table->text('description');
-            $table->text('extra_notes');
+            $table->text('description')->nullable();
+            $table->text('extra_notes')->nullable();
             $table->string('family_side'); //mother side or father side
             $table->integer('patient_id');
             $table->timestamps();
