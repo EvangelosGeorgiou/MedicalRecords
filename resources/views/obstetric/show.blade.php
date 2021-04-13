@@ -24,7 +24,7 @@
 
                             @foreach ($obstetric->childrens as $child)
                             <tr>
-                                <th>Childer Name:</th>
+                                <th>Child Name:</th>
                                 <th>{{ $child['name'] }}</th>
                             </tr>
                             @endforeach
@@ -48,7 +48,7 @@
                             </tr>
 
                             <tr>
-                                <th>Number of children:</th>
+                                <th>Number of childrens:</th>
                                 <th>{{ $obstetric->number_of_childer }}</th>
                             </tr>
 

@@ -27,4 +27,13 @@
     </div>
 </body>
 
+<script>
+    function loadFrame() {
+        console.log("test");
+        unityInstance.SendMessage('PatientIDText', 'setPatientID', "{{ $patients->id }}");
+    };
+    setTimeout(loadFrame, 3000);
+
+</script>
+
 </html>
