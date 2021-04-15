@@ -25,7 +25,7 @@ class HabitsRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            
+
         ];
     }
 }

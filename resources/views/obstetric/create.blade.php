@@ -1,5 +1,9 @@
 @extends('layouts.medical_record')
 
+@section('css')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+@endsection
 @section('content')
 <div class="move-context mb-4">
     <div class="card container">
@@ -70,6 +74,7 @@
 
                 <div class="form-group">
                     <label for="date">Date</label>
+                    {{-- <input type="date" name="date" id="date" class="form-control" value="{{ isset($obstetric) ? $obstetric->date : old('date') }}"> --}}
                     <input type="date" name="date" id="date" class="form-control" value="{{ isset($obstetric) ? $obstetric->date : old('date') }}">
                 </div>
 
@@ -92,7 +97,9 @@
 @section('scripts')
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
-         // flatpickr('#date');
+         flatpickr('#date', {
+        enableTime: true,
+    });
 
 
     </script>

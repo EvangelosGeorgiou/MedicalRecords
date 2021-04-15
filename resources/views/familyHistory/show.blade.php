@@ -23,10 +23,12 @@
                                 <th>Family Side:</th>
                                 <th>{{ $fam_hist->family_side }}</th>
                             </tr>
+                            @if( $fam_hist->description != null)
                             <tr>
                                 <th>Description:</th>
                                 <th>{!! $fam_hist->description !!}</th>
                             </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>
@@ -43,10 +45,12 @@
                                 <th class="trix-editor">{{ $fam_hist->diagnosed_year }}</th>
                             </tr>
 
+                            @if( $fam_hist->extra_notes != null)
                             <tr>
                                 <th>Extra Notes:</th>
-                                <th>{!! $fam_hist->extra_notes !!} kg</th>
+                                <th>{!! $fam_hist->extra_notes !!}</th>
                             </tr>
+                            @endif
                         </tbody>
                     </table>
                 </div>

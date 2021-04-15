@@ -37,12 +37,15 @@ class HabitsController extends Controller
      */
     public function store(HabitsRequest $request)
     {
-        
+
         for($i=0; $i < count($request->name); $i++){
-            $habits = Habits::create([
-                'name' => $request->name[$i],
-                'patient_id' => $request->patient_id
-            ]);
+            if($request->name[$i] != null ){
+                $habits = Habits::create([
+                    'name' => $request->name[$i],
+                    'patient_id' => $request->patient_id
+                ]);
+            }
+
         }
 
         session()->flash('success','Habits Information added successfully');

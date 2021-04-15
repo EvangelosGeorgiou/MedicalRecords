@@ -11,13 +11,13 @@
         color: black
     }
 
-    .move-context{
+    .move-context2{
         margin-bottom: 200px
     }
 
 </style>
 <h2 class="container" style="margin-left: 380px">{{ $patients->name }} {{ $patients->surname }} Medical Record</h2>
-<div class="move-context">
+<div class="move-context2" style="margin-left: 200px">
     <div class="card shadow mb-4 container mt-4">
         <!-- Card Header - Accordion -->
         <a href="#collapseCardExample" class="d-block card-header" data-toggle="collapse" role="button"

@@ -44,7 +44,7 @@
                             <div class="form-group">
                                 <label for="datetime">Date & Time of the Surgery</label>
                                 <input type="date" class="form-control" name="datetime" id="datetime"
-                                    value="{{ isset($surgery) ? $surgery->datetime : old('datetime') }}">
+                                value="{{ isset($surgery) ? $surgery->datetime : old('datetime') }}">
                             </div>
 
                             <div class="form-group">

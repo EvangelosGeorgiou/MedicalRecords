@@ -34,8 +34,6 @@
                     <div class="form-group">
 
                         <label for="icd_code_id">Select the Disorder</label>
-                        {{-- <input type="text" name="icd_code_id" id="icd_code_id" class="form-control icd_code_id" autocomplete="off" value="{{ isset($disease) ? $disease->icdCodeInfo['icd_code'].'/ ' .$disease->icdCodeInfo['name'] : '' }}">
-                        <div id="icd_codes"></div> --}}
                         <select name="icd_code_id" id="icd_code" class="form-control icd_code_select2">
 
                             @if(isset($disorder))
@@ -89,11 +87,13 @@
 
 @section('scripts')
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
 <script>
     flatpickr('#date')
 
     $(document).ready(function () {
-        $(".icd_code_select2").select2();
+        $("select").select2();
     });
 
 </script>

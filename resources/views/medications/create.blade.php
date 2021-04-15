@@ -43,14 +43,14 @@
                             <label for="name">Medication Name</label>
                             <select name="name" id="name" class="form-control">
                                 <option value="">Please select a medicine</option>
-                                <option value="Nurofen">Nurofen</option>
-                                <option value="Panadol">Panadol</option>
-                                <option value="Sildenafil">Sildenafil</option>
-                                <option value="Fluconazole">Fluconazole</option>
-                                <option value="Metoclopramide">Metoclopramide</option>
-                                <option value="Atorvastatin">Atorvastatin</option>
-                                <option value="Hydrothiazine">Hydrothiazine</option>
-                                <option value="Xyzal">Xyzal</option>
+                                <option value="Nurofen" @if(isset($medication) && $medication->name=='Nurofen') selected @endif>Nurofen</option>
+                                <option value="Panadol" @if(isset($medication) && $medication->name=='Panadol') selected @endif>Panadol</option>
+                                <option value="Sildenafil" @if(isset($medication) && $medication->name=='Sildenafil') selected @endif>Sildenafil</option>
+                                <option value="Fluconazole" @if(isset($medication) && $medication->name=='Fluconazole') selected @endif>Fluconazole</option>
+                                <option value="Metoclopramide" @if(isset($medication) && $medication->name=='Metoclopramide') selected @endif>Metoclopramide</option>
+                                <option value="Atorvastatin" @if(isset($medication) && $medication->name=='Atorvastatin') selected @endif>Atorvastatin</option>
+                                <option value="Hydrothiazine" @if(isset($medication) && $medication->name=='Hydrothiazine') selected @endif>Hydrothiazine</option>
+                                <option value="Xyzal" @if(isset($medication) && $medication->name=='Xyzal') selected @endif>Xyzal</option>
                             </select>
                             {{-- <input type="text" id="name" name="name" class="form-control"
                                 placeholder="Enter patient name"
