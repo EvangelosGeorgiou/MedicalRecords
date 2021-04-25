@@ -104,6 +104,17 @@
                             <option value="divorced" @if(isset($patients) && $patients->status=='divorced') selected @endif>Divorced</option>
                         </select>
                     </div>
+                    @if(isset($patients))
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <img src="{{ asset('/storage/'.$patients->image) }}" alt="profile" class="form-control">
+                    </div>
+                    @else
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" class="form-control" id="image" name="image">
+                    </div>
+                    @endif
 
                     @if(isset($patients))
                         <input type="hidden" id="patient_id" name="patient_id" value="{{$patients->id}}">

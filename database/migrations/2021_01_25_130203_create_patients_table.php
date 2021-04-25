@@ -26,6 +26,7 @@ class CreatePatientsTable extends Migration
             $table->string('status');
             $table->string('identity_number');
             $table->string('telephone');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

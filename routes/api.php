@@ -11,6 +11,7 @@ use App\Http\Controllers\Api\HabitsApiController;
 use App\Http\Controllers\Api\IcdApiController;
 use App\Http\Controllers\Api\ImmunizationApiController;
 use App\Http\Controllers\Api\MedicationsApiController;
+use App\Http\Controllers\Api\MedicineApiController;
 use App\Http\Controllers\Api\ObstetricApiController;
 use App\Http\Controllers\Api\SurgeriesApiController;
 use App\Http\Controllers\Api\TestsApiController;
@@ -95,4 +96,7 @@ Route::group(['middleware' => 'api'],function($router){
 
     Route::get('/getIcdCode',[IcdApiController::class,'getICDs']);
     Route::get('/getIcdCode/{id}',[IcdApiController::class,'getICD']);
+
+    Route::get('/getMedicines',[MedicineApiController::class,'getMedicines']);
+    Route::get('/getMedicines/{id}',[MedicineApiController::class,'getMedicine']);
 });

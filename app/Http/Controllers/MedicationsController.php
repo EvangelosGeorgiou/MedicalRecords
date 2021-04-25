@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Patients;
 use App\Medications;
 use App\Http\Requests\MedicationsRequest;
+use App\Medicines;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
@@ -32,7 +33,7 @@ class MedicationsController extends Controller
     public function create($patient_id)
     {
         $patients = Patients::find($patient_id);
-        return view('medications.create')->with('patients', $patients)->with('error_code', "");
+        return view('medications.create')->with('patients', $patients)->with('error_code', "")->with('medicines', Medicines::all());
     }
 
     /**
@@ -128,7 +129,7 @@ class MedicationsController extends Controller
     public function edit(Medications $medication)
     {
         $patients = Patients::find($medication->patient_id);
-        return view('medications.create')->with('patients', $patients)->with('medication',$medication);
+        return view('medications.create')->with('patients', $patients)->with('medication',$medication)->with('medicines', Medicines::all());
     }
 
     /**
