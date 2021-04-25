@@ -12,8 +12,7 @@ class MedicinesSeeder extends Seeder
      */
     public function run()
     {
-        $medicines = array('Nurofen',
-        'Panadol',
+        $medicines = array('Nurofen','Panadol',
         'Sildenafil',
         'Fluconazole',
         'Metoclopramide',
