@@ -7,7 +7,7 @@ use App\Patients;
 use App\Http\Requests\CreatePatientsRequest;
 use App\Http\Requests\UpdatePatientsRequest;
 use App\ContactInformation;
-
+use Illuminate\Support\Facades\Storage;
 
 class PatientsController extends Controller
 {
@@ -105,7 +105,13 @@ class PatientsController extends Controller
         $patient_id = $request->patient_id;
         $patients = Patients::find($patient_id);
 
-        $data = $request->only(['name','surname','email','nationality','dbo','gender','weight','height','status','identity_number', 'telephone']);
+        $data = $request->only(['name','surname','email','nationality','dbo','gender','weight','height','status','identity_number', 'telephone',]);
+
+        if($request->hasFile('image')){
+            $image = $request->image->store('patientsImage');
+            Storage::delete($patients->image);
+            $data['image'] = $image;
+        }
 
         $patients->update($data);
         session()->flash('success','Patient Information updated successfuly');

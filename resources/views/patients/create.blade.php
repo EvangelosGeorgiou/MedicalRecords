@@ -106,8 +106,9 @@
                     </div>
                     @if(isset($patients))
                     <div class="form-group">
-                        <label for="image">Image</label>
-                        <img src="{{ asset('/storage/'.$patients->image) }}" alt="profile" class="form-control">
+                        <label for="image">Profile</label>
+                        <img src="{{ asset('/storage/'.$patients->image) }}" alt="profile"  height="100px" width="100px">
+                        <input type="file" class="form-control" id="image" name="image">
                     </div>
                     @else
                     <div class="form-group">

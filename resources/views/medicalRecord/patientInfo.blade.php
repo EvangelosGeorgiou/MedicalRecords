@@ -78,6 +78,10 @@
                                     <th>Height:</th>
                                     <th>{{ $patients->height }} cm</th>
                                 </tr>
+                                <tr>
+                                    <th>Profile</th>
+                                    <th><img src="{{ asset('/storage/'.$patients->image) }}" alt="profile"  height="100px" width="100px"></th>
+                                </tr>
                             </tbody>
                         </table>
                     </div>

@@ -10,7 +10,15 @@ class PatientsApiController extends Controller
 {
     public function index()
     {
-        return Patients::all();
+        $patients = Patients::all();
+
+        foreach ($patients as $patient) {
+            if($patient->image != null)
+                $patient->image = asset('/storage/'.$patient->image);
+        }
+
+
+        return $patients;
     }
 
     public function show($id)
