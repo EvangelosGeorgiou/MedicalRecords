@@ -45,6 +45,11 @@ class PatientsController extends Controller
     public function store(CreatePatientsRequest $request)
     {
 
+        if($request->image == null){
+            $image = '';
+        }else{
+            $image = $request->image->store('patientsImage');
+        }
         $patient = Patients::create([
             'name' => $request->name,
             'surname' => $request->surname,
@@ -57,7 +62,7 @@ class PatientsController extends Controller
             'status' => $request->status,
             'identity_number' => $request->identity_number,
             'telephone' => $request->telephone,
-            'image' => $request->image->store('patientsImage'),
+            'image' => $image,
             ]);
 
         session()->flash('success',"Patient created successfully");

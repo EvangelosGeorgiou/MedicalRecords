@@ -63,11 +63,13 @@
 @section('css')
 <style>
     tbody tr th:first-child {
-        color: blue
+        color: blue;
+        text-align: left
     }
 
     tbody tr th:last-child {
-        color: black
+        color: black;
+        text-align: left
     }
     .move-context{
     margin-bottom: 300px

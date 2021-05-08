@@ -131,26 +131,25 @@
                 </button>
             </div>
             <div class="modal-body bg-dark" style="color: white">
-                The patient {{ $patients->name." ".$patients->surname }} has the following problem: <br>
+                The patient {{ $patients->name." ".$patients->surname }} has the following disease: <br>
                 <ul>
                     @foreach ($diseases as $disease)
                     <li>{{ $disease }}</li>
                     @endforeach
 
                 </ul>
-                Giving this medicine to the patient will cause side effects. <br><br>
+                Giving this prescription to the patient may cause side effects. <br><br>
                 Do you wish to continue?
             </div>
             <div class="modal-footer bg-dark">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="submit" id="confirm-store" class="btn btn-primary">Yes</button>
+                <button type="button" class="btn btn-danger" style="width: 80px" data-dismiss="modal">No</button>
+                <button type="submit" id="confirm-store" class="btn btn-primary" style="width: 80px">Yes</button>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    console.log("aefae")
     $(function () {
         $('#exampleModalCenter').modal('show');
     });

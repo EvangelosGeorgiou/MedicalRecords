@@ -51,21 +51,6 @@
                     </select>
                 </div>
 
-                {{-- <div class="form-group">
-                    <label for="child_name">Children/s Name</label>
-                    <input  type="hidden" name="child_name" id="child_name" value="{{ isset($obstetric) ? $obstetric->child_name : '' }}">
-                    <trix-editor input="child_name"></trix-editor>
-                </div>
-
-                <div class="form-group">
-                    <label for="child_sex">Child Sex</label>
-                    <select name="child_sex" id="child_sex" class="form-control">
-                        <option value="">Select child sex...</option>
-                        <option value="M" @if(isset($obstetric) && ($obstetric->child_sex == 'M')) selected @endif>Male</option>
-                        <option value="F" @if(isset($obstetric) && ($obstetric->child_sex == 'F')) selected @endif>Female</option>
-                    </select>
-                </div> --}}
-
                 <div class="form-group">
                     <label for="complications">Pregnancy Complications</label>
                     <input  type="hidden" name="complications" id="complications" value="{{ isset($obstetric) ? $obstetric->complications : old('complications') }}">
@@ -80,7 +65,7 @@
 
                 <div class="form-group">
                     <label for="number_of_childer">Number of Children/s</label>
-                    <input type="number" name="number_of_childer" id="number_of_childer" class="form-control" value="{{ isset($obstetric) ? $obstetric->number_of_childer : old('number_of_childer') }}" onchange="addChildren()">
+                    <input type="number" name="number_of_childer" id="number_of_childer" class="form-control" min="0" max="5" value="{{ isset($obstetric) ? $obstetric->number_of_childer : old('number_of_childer') }}" onchange="addChildren()">
                 </div>
 
                 <div class="childrens-div"></div>

@@ -22,7 +22,7 @@
         <div class="card">
             <div class="card shadow">
                 <div class="d-flex flex-row-reverse pr-4 pt-2">
-                    <a href="{{ route('diets.create', $patients->id) }}" class="btn btn-primary btn-sm">Add Diet</a>
+                    <a href="{{ route('diets.create', $patients->id) }}" class="btn btn-primary btn-sm">Add Information</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -86,7 +86,7 @@
         <div class="card mt-3">
             <div class="card shadow ">
                 <div class="d-flex flex-row-reverse pr-4 pt-2">
-                    <a href="{{ route('habits.create', $patients->id) }}" class="btn btn-primary btn-sm">Add Habits</a>
+                    <a href="{{ route('habits.create', $patients->id) }}" class="btn btn-primary btn-sm">Add Information</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

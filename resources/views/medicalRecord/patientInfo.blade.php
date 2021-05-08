@@ -36,7 +36,7 @@
                                     <th>{{ $patients->surname }}</th>
                                 </tr>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>ID:</th>
                                     <th>{{ $patients->identity_number}}</th>
                                 </tr>
                                 <tr>
@@ -78,10 +78,12 @@
                                     <th>Height:</th>
                                     <th>{{ $patients->height }} cm</th>
                                 </tr>
+                                @if($patients->image !=null)
                                 <tr>
-                                    <th>Profile</th>
+                                    <th>Profile:</th>
                                     <th><img src="{{ asset('/storage/'.$patients->image) }}" alt="profile"  height="100px" width="100px"></th>
                                 </tr>
+                                @endif
                             </tbody>
                         </table>
                     </div>

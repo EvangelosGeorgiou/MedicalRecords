@@ -80,7 +80,7 @@
                 <div class="card shadow mb-4 mt-3">
                     <div class="d-flex flex-row-reverse pr-4 pt-2">
                         <a href="{{ route('allergies.create', $patients->id) }}" class="btn btn-primary btn-sm">Add
-                            Allergy</a>
+                            Information</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -145,7 +145,7 @@
                 <div class="card shadow mb-4 mt-3">
                     <div class="d-flex flex-row-reverse pr-4 pt-2">
                         <a href="{{ route('disorders.create', $patients->id) }}" class="btn btn-primary btn-sm">Add
-                            Disorder</a>
+                            Information</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

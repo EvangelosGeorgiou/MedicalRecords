@@ -68,7 +68,7 @@ class MedicationsController extends Controller
 
 
         if(!empty($diseases_arr)){
-            return View::make('medications.create')->with(['patients' => $patients, 'error_code'=> 5, 'request'=>$request, 'diseases' => $diseases_arr]);
+            return View::make('medications.create')->with(['patients' => $patients, 'error_code'=> 5, 'request'=>$request, 'diseases' => $diseases_arr, 'medicines' => Medicines::all()]);
         }else{
             $medication = Medications::create([
                 'name'  => $request->name,
