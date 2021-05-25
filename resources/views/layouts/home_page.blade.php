@@ -38,7 +38,7 @@
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-user-md"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Doctor Panel</div>
+                <div class="sidebar-brand-text mx-3">Electonic Health Record</div>
             </a>
 
             <!-- Divider -->

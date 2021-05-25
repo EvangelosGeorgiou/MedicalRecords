@@ -1,8 +1,8 @@
 @extends('layouts.medical_record')
 
 @section('content')
-<h2 class="container" style="margin-left: 380px">{{ $patients->name }} {{ $patients->surname }} Medical Record</h2>
 <div class="move-context2">
+    <h2 class="container">{{ $patients->name }} {{ $patients->surname }} Medical Record</h2>
     <!-- DataTales Example -->
     <div class="container">
         <div class="card shadow mb-5 mt-4">
