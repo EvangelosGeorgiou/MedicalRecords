@@ -19,7 +19,8 @@ class CreateContactInformationTable extends Migration
             $table->string('city');
             $table->string('address');
             $table->string('postal_code');
-            $table->integer('patient_id');
+            $table->unsignedBigInteger('patient_id');
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->timestamps();
         });
     }

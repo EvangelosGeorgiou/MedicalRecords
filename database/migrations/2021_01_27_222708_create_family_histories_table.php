@@ -22,7 +22,8 @@ class CreateFamilyHistoriesTable extends Migration
             $table->text('description')->nullable();
             $table->text('extra_notes')->nullable();
             $table->string('family_side'); //mother side or father side
-            $table->integer('patient_id');
+            $table->unsignedBigInteger('patient_id');
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->timestamps();
         });
     }

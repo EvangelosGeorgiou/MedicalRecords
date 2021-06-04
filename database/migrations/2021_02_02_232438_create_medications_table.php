@@ -23,7 +23,8 @@ class CreateMedicationsTable extends Migration
             $table->text('purpose');
             $table->string('doctor_name');
             $table->text('side_effects')->nullable();
-            $table->integer('patient_id');
+            $table->unsignedBigInteger('patient_id');
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->timestamps();
         });
     }

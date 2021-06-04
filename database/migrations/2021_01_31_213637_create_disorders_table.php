@@ -23,7 +23,8 @@ class CreateDisordersTable extends Migration
             $table->text('description')->nullable();
             $table->date('date');
             $table->string('body_part');
-            $table->integer('patient_id');
+            $table->unsignedBigInteger('patient_id');
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->timestamps();
         });
     }

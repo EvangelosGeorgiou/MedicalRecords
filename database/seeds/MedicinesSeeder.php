@@ -17,7 +17,8 @@ class MedicinesSeeder extends Seeder
         'Fluconazole',
         'Metoclopramide',
         'Atorvastatin',
-        'Hydrothiazine',);
+        'Hydrothiazine',
+    'Remedol');
 
         foreach($medicines as $medicine){
             Medicines::create([

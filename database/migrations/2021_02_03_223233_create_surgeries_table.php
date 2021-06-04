@@ -22,7 +22,8 @@ class CreateSurgeriesTable extends Migration
             $table->string('body_part');
             $table->text('complications')->nullable();
             $table->json('procedures')->nullable();
-            $table->integer('patient_id');
+            $table->unsignedBigInteger('patient_id');
+            $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
             $table->timestamps();
         });
     }
